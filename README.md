@@ -16,7 +16,6 @@ sample log content
 command line
 ```
 
-result1
-
-result2
+: result1
+: result2
 
