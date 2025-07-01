@@ -6,7 +6,7 @@ under construction ...
 
 ## Parse
 
-## Search
+## Search / Detect
 :bookmark:  **example 1**
 
 > sample log content
