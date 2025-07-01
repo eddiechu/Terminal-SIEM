@@ -8,16 +8,13 @@ under construction ...
 
 ## Search
 
-### example 1
-
-> log example
+> example 1
+sample log content
 
 ``` 
 command line
 ```
 
-##### result
-##### result2
-##### result3
-
+result1
+result2
 
