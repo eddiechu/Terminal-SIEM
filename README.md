@@ -10,7 +10,7 @@ Technology | Linux terminal, file based | Web based, index and NoSQL
 Production architecture | ONE host | Several hosts per role
 Sizing | xlarge | 4xlarge per host
 Log injection | Hundreds thousand entries / sec | Thousand, need MQ to support more volume to minimize log loss burst
-Multiprocessing | Yes | Yes
+Multiprocessing | Yes | Depend
 Correlation | Yes | Yes
 Log parsing | by awk, jq, Golang, build from scratch, with the help of Gen AI<br/>(Can avoid regular experssion for hundreds times performance gain) | built-in parser for common log source
 Detection | by grep or awk, build from scratch, convert from community threat detection rules with the help of Gen AI | Primitive, need to build most
