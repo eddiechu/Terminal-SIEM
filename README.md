@@ -3,7 +3,7 @@
 > under construction ...
 
 ## **Characteristic**
-Function | Termina SIEM | Community \/ Brand SIEM
+Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
 Technology | Terminal, file based | Web based, index and NoSQL
 Production architecture | One host | Several hosts per role
