@@ -22,7 +22,7 @@ Flexibility | Can develop search criteria what ever you think, and with the help
 Patch / security management | Linux | Linux and product
 Store raw log | Yes, raw log and parsed log | No
 Retention | File management | Index management
-Skill set required | Linux rsyslog, grep, awk, jq, find, sort, uniq, file management, etc (may need Golang and Python for advanced usage)| Product knowledge
+Skill set required | Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel, xargs, file management, etc (may need Golang and Python for advanced usage) | Product knowledge
 
 ## **Cheat Sheet**
 
