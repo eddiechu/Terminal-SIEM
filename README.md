@@ -12,8 +12,8 @@ Multiprocessing | Yes | Yes
 Correlation | Yes | Yes
 Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI | built-in parser for common log source
 Detection | by grep or awk, build from scratch, convert from community threat detection rules with the help of Gen AI | Primitive, need to build most
-High availability | Load balancer, 2 nodes, share storage | Can extend to HA
-Scalable | Vertical | Horizontal
+High availability | Load balancers, 2 nodes, share storage | Can extend to HA
+Scalability | Vertical | Horizontal
 Dashboard and report | No | Yes
 Access control | Linux | Product built-in
 Flexibility | Can develop search criteria what ever you want, and with the help of Gen AI, <br/>e.g. <ul><li>any source IP to a destinated IP access more than 20 different ports</li><li>any user login O365 cross more than one countries within an hour</li><li>over 80 unique user login failed over an hour</li><li>what happen on that laptop and firewall in 3 minutes before the incident</li><li>any user to a single web site, accumulated upload size more than 100MB within a day</li></ul> | Limit to the product capability
