@@ -3,7 +3,7 @@
 > under construction ...\
 > help people without SIEM or with SIEM but limited capability.
 
-## **Characteristic**
+## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
 Technology | **Linux terminal, file based** | Web based, index and NoSQL
