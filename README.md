@@ -9,8 +9,8 @@ under construction ...
 ## Search
 > **example 1**
 
-sample log content
-$``` 
+:bookmark_tabs: sample log content
+``` 
 command line
 ```
 result1
