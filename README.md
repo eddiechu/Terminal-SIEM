@@ -39,7 +39,7 @@ command line
 > result 1\
 > result 2
 
-## Log Parsing
+### <ins>Log Parsing</ins>
 :bookmark:  **example 1**
 
 > sample log content
@@ -52,7 +52,7 @@ command line
 > result 1\
 > result 2
 
-## Threat hunting \/ detection
+### <ins>Threat hunting \/ detection</ins>
 :bookmark:  **example 1**
 
 > sample log content
