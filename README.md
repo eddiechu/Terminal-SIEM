@@ -10,8 +10,9 @@ under construction ...
 :bookmark:  **example 1**
 
 > sample log content
+
 ``` 
 command line
 ```
-> result1\
-> result2
+`-r` parameter 1\
+`-r` parameter 1
