@@ -1,7 +1,7 @@
 # **Terminal SIEM**
 > [!NOTE]
 > under construction ...\
-> help people without SIEM or with SIEM but limited capability.
+> Help administrator without SIEM or with SIEM but limited capability.
 
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
