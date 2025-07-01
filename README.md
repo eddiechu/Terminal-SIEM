@@ -17,9 +17,7 @@ command line
 ```
 
 > result
-
-> result2
-
-> result3
+result2
+result3
 
 
