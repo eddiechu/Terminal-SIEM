@@ -7,7 +7,7 @@ under construction ...
 ## Parse
 
 ## Search
-:pushpin: **example 1**
+:red_circle: **example 1**
 
 > sample log content
 ``` 
