@@ -7,9 +7,6 @@ under construction ...
 ## Parse
 
 ## Search
-
-this is 
-
 > **example 1**
 
 sample log content
