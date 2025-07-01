@@ -8,7 +8,7 @@ Attribute | Termina SIEM | Community \/ Brand SIEM
 Technology | Linux terminal, file based | Web based, index and NoSQL
 Production architecture | ONE host | Several hosts per role
 Sizing | xlarge | 4xlarge per host
-Log injection | hundreds thousand entries / sec | Thousand, need MQ to support more volume to minimize log loss burst
+Log injection | Hundreds thousand entries / sec | Thousand, need MQ to support more volume to minimize log loss burst
 Multiprocessing | Yes | Yes
 Correlation | Yes | Yes
 Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI | built-in parser for common log source
