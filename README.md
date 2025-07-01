@@ -3,7 +3,7 @@
 > under construction ...
 
 ## **Comparison**
- | Termina SIEM | Community \/ Brand SIEM
+Feature | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
