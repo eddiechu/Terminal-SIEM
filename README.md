@@ -2,8 +2,8 @@
 > [!NOTE]
 > under construction ...
 
-## **Comparison**
-Feature | Termina SIEM | Community \/ Brand SIEM
+## **Characteristic**
+Function | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
