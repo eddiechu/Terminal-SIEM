@@ -26,6 +26,8 @@ Skill set required | Linux rsyslog, grep, awk, jq, find, sort, uniq, file manage
 ## **Cheat Sheet**
 
 ## Log Parsing
+:bookmark:  **example 1**
+
 > sample log content
 
 ``` 
@@ -35,8 +37,6 @@ command line
 `-t` parameter 2
 > result 1\
 > result 2
-#
-:bookmark:  **example 2**
 
 ## Threat hunting \/ Detection
 :bookmark:  **example 1**
