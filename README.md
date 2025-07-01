@@ -11,7 +11,7 @@ under construction ...
 
 > sample log content
 ``` 
-command line
+command <ins>line</ins>
 ```
 > result1
 >
