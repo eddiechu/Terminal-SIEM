@@ -7,6 +7,6 @@ under construction ...
 ### Parse
 
 ### Search
-```
-command `line`
+``` js
+command line
 ```
