@@ -5,12 +5,18 @@
 ## **Characteristic**
 Function | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+Technology | Terminal, file based | Web based, index and NoSQL
+Production architecture | One host | Several hosts per role
+Sizing | xlarge | 4xlarge per host
+Multiprocessing | Yes | Yes
+Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI | Common log source
+
+
+
 
 ## **Cheat Sheet**
 
-## Log Parse
+## Log Parsing
 > sample log content
 
 ``` 
@@ -23,7 +29,7 @@ command line
 #
 :bookmark:  **example 2**
 
-## Log Search \/ Detect
+## Threat hunting \/ Detection
 :bookmark:  **example 1**
 
 > sample log content
