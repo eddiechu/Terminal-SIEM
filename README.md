@@ -17,5 +17,6 @@ command line
 ```
 
 : result1
+
 : result2
 
