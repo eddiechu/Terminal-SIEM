@@ -13,5 +13,10 @@ under construction ...
 > log example
 
 ``` 
-command **line**
+command line
 ```
+<sup>
+result
+result2
+result3
+</sup>
