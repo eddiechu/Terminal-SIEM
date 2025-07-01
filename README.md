@@ -32,3 +32,9 @@ command line
 > result 2
 
 #
+siem
+opensearch
+elasticsearch
+search
+index
+security
