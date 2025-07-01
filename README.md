@@ -19,6 +19,7 @@ command line
 > result 1\
 > result 2
 ---
+***
 :bookmark:  **example 2**
 
 > sample log content
