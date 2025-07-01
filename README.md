@@ -1,17 +1,17 @@
 under construction ...
 
-# Terminal SIEM
+# **Terminal SIEM**
 
-## Cheat Sheets
+## **Cheat Sheets**
 
-### Parse
+## Parse
 
-### Search
+## Search
 
-#### example 1
+### example 1
 
 > log example
 
 ``` 
-command line
+command **line**
 ```
