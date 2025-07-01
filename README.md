@@ -6,7 +6,7 @@
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
 Technology | Terminal, file based | Web based, index and NoSQL
-Production architecture | One host | Several hosts per role
+Production architecture | ONE host | Several hosts per role
 Sizing | xlarge | 4xlarge per host
 Multiprocessing | Yes | Yes
 Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI | built-in parser for common log source
@@ -17,8 +17,9 @@ Dashboard and report | No | Yes
 Access control | Linux | Product built-in
 Flexibility | Can develop search criteria what even you think, e.g. <ul><li>any source IP to a destinated IP access more than 20 different ports</li><li>any user login O365 cross more than one countries within an hour</li><li>over 80 unique user login failed over an hour</li><li>any user to a single web site, accumulated upload size more than 100MB within a day</li></ul> | Limit to the product capability
 Patch / security management | Linux | Linux and product
-Store raw log | Yes, raw log and parsed log | No, parsed log
+Store raw log | Yes, raw log and parsed log | No
 Retention | File management | Index management
+Skill set | Linux RSYSLOG, GREP, AWK, file management, may need Go and Python | product knowledge
 
 ## **Cheat Sheet**
 
