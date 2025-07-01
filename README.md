@@ -4,9 +4,9 @@
 
 ## **Cheat Sheets**
 
-## Parse
+## Log Parse
 
-## Search \/ Detect
+## Log Search \/ Detect
 :bookmark:  **example 1**
 
 > sample log content
