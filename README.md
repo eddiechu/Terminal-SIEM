@@ -11,7 +11,7 @@ Sizing | xlarge | 4xlarge per host
 Log injection | Hundreds thousand entries / sec | Thousand, need MQ to support more volume to minimize log loss burst
 Multiprocessing | Yes | Yes
 Correlation | Yes | Yes
-Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI<br/>(Can avoid regular experssion for hundreds times performance gain) | built-in parser for common log source
+Log parsing | by awk, jq, Golang, build from scratch, with the help of Gen AI<br/>(Can avoid regular experssion for hundreds times performance gain) | built-in parser for common log source
 Detection | by grep or awk, build from scratch, convert from community threat detection rules with the help of Gen AI | Primitive, need to build most
 High availability | Load balancers, 2 nodes, share storage | Can extend to HA
 Scalability | Vertical | Horizontal
@@ -21,7 +21,7 @@ Flexibility | Can develop search criteria what ever you think, and with the help
 Patch / security management | Linux | Linux and product
 Store raw log | Yes, raw log and parsed log | No
 Retention | File management | Index management
-Skill set required | Linux rsyslog, grep, awk, jq, find, sort, uniq, file management, etc | Product knowledge
+Skill set required | Linux rsyslog, grep, awk, jq, find, sort, uniq, file management, etc (may need Golang and Python for advanced usage)| Product knowledge
 
 ## **Cheat Sheet**
 
