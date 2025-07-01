@@ -7,7 +7,8 @@ under construction ...
 ## Parse
 
 ## Search
-:red_circle: **example 1**
+:red_circle:  **example 1**\
+:bookmark:  **example 1**
 
 > sample log content
 ``` 
