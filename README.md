@@ -8,6 +8,7 @@ under construction ...
 
 ## Search
 > **example 1**
+
 sample log content
 ``` 
 command line
