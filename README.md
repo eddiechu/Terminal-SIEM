@@ -26,7 +26,7 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 
 ## **Cheat Sheet**
 
-## Log Collection
+### Log Collection
 :bookmark:  **example 1**
 
 > sample log content
