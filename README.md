@@ -5,7 +5,7 @@
 ## **Characteristic**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
-Technology | Terminal, file based | Web based, index and NoSQL
+Technology | Linux terminal, file based | Web based, index and NoSQL
 Production architecture | ONE host | Several hosts per role
 Sizing | xlarge | 4xlarge per host
 Multiprocessing | Yes | Yes
