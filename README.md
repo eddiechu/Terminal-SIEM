@@ -13,6 +13,6 @@ under construction ...
 ``` 
 command line
 ```
-> result1<br/>
+> result1\
 > result2
 
