@@ -8,8 +8,6 @@ under construction ...
 
 ## Search
 
-> [!Example 1]
-
 this is 
 
 > **example 1**
