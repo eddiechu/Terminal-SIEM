@@ -7,13 +7,13 @@ under construction ...
 ## Parse
 
 ## Search
-> :pushpin: **example 1**
+:pushpin: **example 1**
 
-:bookmark_tabs: sample log content
+> sample log content
 ``` 
 command line
 ```
-result1
+> result1
 
-result2
+> result2
 
