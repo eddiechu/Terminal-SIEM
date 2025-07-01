@@ -10,8 +10,7 @@ under construction ...
 
 #### example 1
 
-[^note]:
-  log example
+> log example
 
 ``` 
 command line
