@@ -3,7 +3,7 @@
 > under construction ...
 
 ## **Comparison**
-Markdown | Less | Pretty
+ | Termina SIEM | Community / Brand SIEM
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
