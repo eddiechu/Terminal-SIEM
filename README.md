@@ -8,13 +8,10 @@ under construction ...
 
 ## Search
 > **example 1**
-
 sample log content
-
 ``` 
 command line
 ```
-
 result1
 
 result2
