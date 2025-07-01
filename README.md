@@ -8,5 +8,5 @@ under construction ...
 
 ### Search
 ```
-command
+command `line`
 ```
