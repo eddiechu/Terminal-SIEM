@@ -38,7 +38,7 @@ command line
 > result 1\
 > result 2
 
-## Threat hunting \/ Detection
+## Threat hunting \/ detection
 :bookmark:  **example 1**
 
 > sample log content
