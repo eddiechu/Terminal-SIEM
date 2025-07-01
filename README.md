@@ -17,7 +17,7 @@ High availability | Load balancers, 2 nodes, share storage | Can extend to HA
 Scalability | Vertical | Horizontal
 Dashboard and report | No | Yes
 Access control | Linux | Product built-in
-Flexibility | Can develop search criteria what ever you want, and with the help of Gen AI, <br/>e.g. <ul><li>any source IP to a destinated IP access more than 20 different ports</li><li>any user login O365 cross more than one countries within an hour</li><li>over 80 unique user login failed over an hour</li><li>what happen on that laptop and firewall in 3 minutes before the incident</li><li>any user to a single web site, accumulated upload size more than 100MB within a day</li></ul> | Limit to the product capability
+Flexibility | Can develop search criteria what ever you think, and with the help of Gen AI, <br/>e.g. <ul><li>any source IP to a destinated IP access more than 20 different ports</li><li>any user login O365 cross more than one countries within an hour</li><li>over 80 unique user login failed over an hour</li><li>what happen on that laptop and firewall in 3 minutes before the incident</li><li>any user to a single web site, accumulated upload size more than 100MB within a day</li></ul> | Limit to the product capability
 Patch / security management | Linux | Linux and product
 Store raw log | Yes, raw log and parsed log | No
 Retention | File management | Index management
