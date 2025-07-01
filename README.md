@@ -9,9 +9,9 @@ Technology | Terminal, file based | Web based, index and NoSQL
 Production architecture | One host | Several hosts per role
 Sizing | xlarge | 4xlarge per host
 Multiprocessing | Yes | Yes
-Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI | Common log source
+Log parsing | by awk, jq, golang, build from scratch, with the help of Gen AI | built-in parser for common log source
 Detection | by grep or awk, build from scratch, convert from community threat detection rules with the help of Gen AI | Primitive, need to build most
-High availability | Can extend to HA | Can extend to HA
+High availability | Load balancer, 2 nodes, share storage | Can extend to HA
 Scalable | Vertical | Horizontal
 Dashboard and report | No | Yes
 Flexibility | Can develop what even you think | Limit to the product capability
