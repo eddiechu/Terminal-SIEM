@@ -13,6 +13,6 @@ sample log content
 ``` 
 command line
 ```
-[^]: result1
-[^]: result2
+[^1]: result1
+[^2]: result2
 
