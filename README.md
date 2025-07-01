@@ -15,8 +15,7 @@ High availability | Load balancer, 2 nodes, share storage | Can extend to HA
 Scalable | Vertical | Horizontal
 Dashboard and report | No | Yes
 Access control | Linux | Product built-in
-Flexibility | Can develop search criteria what even you think, e.g. - any source IP to a destinated IP access more than 20 different ports | Limit to the product capability
-| - any source IP to a destinated IP access more than 20 different ports |
+Flexibility | Can develop search criteria what even you think, e.g. - <ul><li>any source IP to a destinated IP access more than 20 different ports</li></ul> | Limit to the product capability
 Patch / security management | Linux | Linux and product
 Store raw log | Yes, raw log and parsed log | No, parsed log
 Retention | File management | Index management
