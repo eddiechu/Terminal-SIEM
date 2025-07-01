@@ -2,7 +2,7 @@
 > [!NOTE]
 > under construction ...
 
-## **Cheat Sheets**
+## **Cheat Sheet**
 
 ## Log Parse
 
