@@ -7,6 +7,12 @@ under construction ...
 ### Parse
 
 ### Search
+
+#### example 1
+
+[^note]:
+  log example
+
 ``` 
 command line
 ```
