@@ -7,7 +7,7 @@ under construction ...
 ## Parse
 
 ## Search
-> **example 1**
+> :pushpin: **example 1**
 
 :bookmark_tabs: sample log content
 ``` 
