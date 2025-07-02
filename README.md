@@ -52,7 +52,7 @@ command line
 > result 2
 
 ### <ins>Threat hunting \/ detection</ins>
-:bookmark:  **search "mimikatz" form the log since last check**
+:bookmark:  **Search "mimikatz" form the log since last check**
 
 ``` 
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`;
@@ -72,6 +72,17 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 `tail -c +$pos ...` get the content after number of characters\
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
+
+To archive `tail` .. `grep` in multiple processes, either
+```
+tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
+``` 
+OR
+```
+tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
+``` 
+`parallel -j 0 ...` run in multiple processes
+
 
 #
 :bookmark:  **example 2**
