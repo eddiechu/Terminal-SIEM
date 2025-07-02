@@ -73,7 +73,7 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 `echo $lastpost ...` store the total characters as last position in the .pos file\
 `tail -c +$pos ...` get the content after number of characters\
 `xargs -P 0 ...` run in multiple processes\
-`grep -i ...` run in multiple processes
+`grep -i ...` search text, case in-sensitive
 > result 1\
 > result 2
 #
