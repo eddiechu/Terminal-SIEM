@@ -57,18 +57,21 @@ command line
 > sample log content
 
 ``` 
-for f in `find \var\log\rsyslog\rsyslog*.log -mmin -1`;
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`;
 do pos=$(cat ${f}.lastpos); 
   lastpos=$(stat -c %s ${f}); 
   echo $lastpos > ${f}.lastpos; 
   tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; 
 done
 ```
+OR
 ``` 
-for f in `find \var\log\rsyslog\rsyslog*.log -mmin -1`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
 ```
-`-r` parameter 1\
-`-t` parameter 2
+`find ... -mmin -1` find file last modified within 3 minute\
+`stat -c %s ...` total charaters in the file\
+`tail -c +$pos` get the content after number of charaters\
+`xargs -P 0` run in multiple processes
 > result 1\
 > result 2
 #
