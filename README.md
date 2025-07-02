@@ -29,7 +29,7 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 ### <ins>Log Collection</ins>
 :bookmark:  **Consolidate syslog with timestamp as file name**
 
-> in /etc/rsyslog.conf, configure to use timestamp as file name
+> in the /etc/rsyslog.conf, configure to use timestamp as file name, e.g. rsyslog-202507020420.log
 
 ``` 
 $template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MINUTE%.log"
