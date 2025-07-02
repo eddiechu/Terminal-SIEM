@@ -73,7 +73,7 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
 
-> This way, you can run it by schedule, keep tracking last position, no overlap happen
+> This way, you can run it by schedule, keep tracking last check position, no overlap happen
 
 To archive `tail` .. `grep` in multiple processes, either
 ```
