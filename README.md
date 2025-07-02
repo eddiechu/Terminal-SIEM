@@ -29,16 +29,14 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 ### <ins>Log Collection</ins>
 :bookmark:  **Consolidate syslog with timestamp as file name**
 
-> add the timestamp as file name setting as below in /etc/rsyslog.conf
+> in /etc/rsyslog.conf, configure to use timestamp as file name
 
 ``` 
 $template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MINUTE%.log"
 *.* ?CustomTemplate;RSYSLOG_TraditionalFileFormat
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
-
 ```
 > then restart rsyslog service to take effective
-> result 2
 
 ### <ins>Log Parsing</ins>
 :bookmark:  **example 1**
