@@ -69,10 +69,10 @@ OR
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
 ```
 `find ... -mmin -3` find file last modified within 3 minute\
-`stat -c %s ...` total charaters in the file\
-`echo $lastpost ...` store the total charaters as last position in the .pos file\
-`tail -c +$pos ...` get the content after number of charaters\
-`xargs -P 0 ...` run in multiple processes
+`stat -c %s ...` total characters in the file\
+`echo $lastpost ...` store the total characters as last position in the .pos file\
+`tail -c +$pos ...` get the content after number of characters\
+`xargs -P 0 ...` run in multiple processes\
 `grep -i ...` run in multiple processes
 > result 1\
 > result 2
