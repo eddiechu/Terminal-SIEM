@@ -52,9 +52,7 @@ command line
 > result 2
 
 ### <ins>Threat hunting \/ detection</ins>
-:bookmark:  **find "mimikatz" form the log since last check**
-
-> sample log content
+:bookmark:  **search "mimikatz" form the log since last check**
 
 ``` 
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`;
@@ -74,8 +72,7 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 `tail -c +$pos ...` get the content after number of characters\
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
-> result 1\
-> result 2
+
 #
 :bookmark:  **example 2**
 
