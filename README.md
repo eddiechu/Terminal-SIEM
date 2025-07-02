@@ -29,14 +29,14 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 ### <ins>Log Collection</ins>
 :bookmark:  **Consolidate syslog to single file, use timestamp as file name**
 
-> in the /etc/rsyslog.conf, configure to use timestamp as file name, e.g. rsyslog-202507020420.log
+in the /etc/rsyslog.conf, configure to use timestamp as file name, e.g. rsyslog-202507020420.log
 
 ``` 
 $template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MINUTE%.log"
 *.* ?CustomTemplate;RSYSLOG_TraditionalFileFormat
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 ```
-> then restart rsyslog service to take effective
+then restart rsyslog service to take effective
 
 ### <ins>Log Parsing</ins>
 :bookmark:  **example 1**
