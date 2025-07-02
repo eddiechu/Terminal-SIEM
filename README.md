@@ -52,12 +52,17 @@ command line
 > result 2
 
 ### <ins>Threat hunting \/ detection</ins>
-:bookmark:  **example 1**
+:bookmark:  **find "mimikatz" form the log since last check**
 
 > sample log content
 
 ``` 
-command line
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -1`;
+do pos=$(cat ${f}.lastpos); 
+  lastpos=$(stat -c %s ${f}); 
+  echo $lastpos > ${f}.lastpos; 
+  tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; 
+done
 ```
 `-r` parameter 1\
 `-t` parameter 2
