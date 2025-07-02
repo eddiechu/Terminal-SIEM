@@ -66,12 +66,14 @@ OR
 ``` 
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
 ```
-`find ... -mmin -3` find file last modified within 3 minute\
+`find ... -mmin -3` find file last modified within 3 minutes\
 `stat -c %s ...` total characters in the file\
 `echo $lastpost ...` store the total characters as last position in the .pos file\
-`tail -c +$pos ...` get the content after number of characters\
+`tail -c +$pos ...` get the content after number of characters \/ since last check\
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
+
+> This way, you can run it by schedule, keep tracking last position, no overlap happen
 
 To archive `tail` .. `grep` in multiple processes, either
 ```
