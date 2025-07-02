@@ -27,12 +27,15 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 ## **Cheat Sheet**
 
 ### <ins>Log Collection</ins>
-:bookmark:  **example 1**
+:bookmark:  **Consolidate syslog**
 
-> sample log content
+> /etc/rsyslog.conf
 
 ``` 
-command line
+$template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MINUTE%.log"
+*.* ?CustomTemplate;RSYSLOG_TraditionalFileFormat
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
 ```
 `-r` parameter 1\
 `-t` parameter 2
