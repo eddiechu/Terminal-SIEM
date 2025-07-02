@@ -27,7 +27,7 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 ## **Cheat Sheet**
 
 ### <ins>Log Collection</ins>
-:bookmark:  **Consolidate all log sources to a single file, use timestamp as file name**
+:bookmark:  **Consolidate all syslog sources to a single file, use timestamp as file name**
 
 in the /etc/rsyslog.conf, configure to use timestamp as file name, e.g. rsyslog-202507020420.log
 
