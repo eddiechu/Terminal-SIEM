@@ -78,7 +78,14 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 To archive `tail` .. `grep` in multiple processes, either
 ```
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
-``` 
+```
+```
+#!/bin/bash
+grep -i "mimikatz"
+
+tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
+```
+
 OR
 ```
 tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
