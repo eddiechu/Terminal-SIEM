@@ -68,7 +68,7 @@ while IFS= read -r line; do
   echo "log_time:$log_time|event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
 done
 ```
-Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient
+*Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient*
 ```
 tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db
 ```
