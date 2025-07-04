@@ -97,6 +97,7 @@ done
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
 
+> [!TIP]
 > This way, you can run it by schedule, keep tracking last check position, no overlap happen
 
 To archive `tail` | `grep` in multiple processes, either
@@ -108,7 +109,8 @@ OR
 tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
 ```
 `parallel -j 0 ...` run in multiple processes
-OR
+
+> [!TIP]
 > Multiple searches in one batch
 
 `detection.sh`
