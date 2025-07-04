@@ -53,7 +53,10 @@ command line
 
 ### <ins>Threat hunting \/ detection</ins>
 :bookmark:  **Search "mimikatz" form the log since last check**
-
+``` 
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
+```
+OR
 ``` 
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`;
 do pos=$(cat ${f}.lastpos); 
@@ -61,10 +64,6 @@ do pos=$(cat ${f}.lastpos);
   echo $lastpos > ${f}.lastpos; 
   tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; 
 done
-```
-OR
-``` 
-for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
 ```
 `find ... -mmin -3` find file last modified within 3 minutes\
 `stat -c %s ...` total characters in the file\
