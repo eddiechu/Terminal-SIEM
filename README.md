@@ -69,7 +69,7 @@ done
 `]` Ends the charcter set\
 `+` match all characters
 ```
-tail rsyslog.log | parse.sh >> parsedlog.db
+tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db
 ```
 > event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`"allow"`
 
