@@ -51,7 +51,7 @@ then restart rsyslog service to take effective
 
 `parse.sh`
 
-e.g. extract source_ip between `source_ip:` and ` ` (space) from the syslog 
+e.g. extract source IP between `source_ip:` and ` ` (space) from the syslog 
 ```
 #!/bin/bash
 while IFS= read -r line; do
