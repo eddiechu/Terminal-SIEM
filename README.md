@@ -55,7 +55,7 @@ e.g. extract source IP from the syslog between\
 `source_ip:` and ` ` (space) or\
 `source_ip:` and ` srcport=` 
  
-```
+```bash
 #!/bin/bash
 while IFS= read -r line; do
   log_time=$(echo "$line" | awk -F' ' '{print $1 " " $2i " " $3}')
