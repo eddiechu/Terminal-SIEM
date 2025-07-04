@@ -64,7 +64,8 @@ done
 `\K` only output what comes after\
 `[` Starts a character set\
 `^ ` end delimiter, e.g. space
-`^"` end delimiter, e.g. quote\
+`^"` quote
+`^}` }\
 `]` Ends the charcter set\
 `+` match all characters
 ```
