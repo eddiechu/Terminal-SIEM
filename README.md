@@ -51,8 +51,8 @@ then restart rsyslog service to take effective
 
 `parse.sh`
 
-e.g. extract source IP from the syslog\
-between `source_ip:` and ` ` (space) or\
+e.g. extract source IP from the syslog between\
+`source_ip:` and ` ` (space) or\
 `source_ip:` and ` srcport=` 
  
 ```
