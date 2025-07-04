@@ -41,7 +41,7 @@ $template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MI
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 ```
 then restart rsyslog service to take effective
-
+---
 ### <ins>Log Parsing</ins>
 :bookmark:  **Parse syslog to standard schema with delimiator of "|"**
 
@@ -74,7 +74,7 @@ done
 ```
 > [!TIP]
 >Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient
-
+---
 ### <ins>Threat hunting \/ detection</ins>
 :bookmark:  **Search threat keyword form the log since last check**
 ```bash
