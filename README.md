@@ -45,7 +45,8 @@ then restart rsyslog service to take effective
 ### <ins>Log Parsing</ins>
 :bookmark:  **Parse syslog to standard schema with delimiator of "|"**
 
-> syslog example\
+> syslog example
+> 
 > Jul  2 11:59:57 firewall.office.local logver=904012795 timestamp=1751457595 devname="office-fw01" devid="TGVM8VTM20000284" vd="root" date=2025-07-02 time=11:59:55 eventtime=1751457595817641505 logid="0000000019" type="traffic" subtype="forward" level="notice" srcip=192.168.13.87 srcport=52944 srcintf="port2" srcintfrole="undefined" dstip=34.120.146.18 dstport=443 dstintf="port1" dstintfrole="undefined" srccountry="Reserved" dstcountry="United States" sessionid=2897923 proto=6 action="server-rst" policyid=1 policytype="policy" poluuid="c3754272-8221-51ef-2830-20a9f9ffa552" policyname="Allow to Internet" service="HTTPS" trandisp="snat" transip=192.168.90.5 transport=52944 appid=57465 app="Palo.Alto.Networks.Cortex.XDR" appcat="General.Interest" apprisk="elevated" applist="block-high-risk" duration=5 sentbyte=4100 rcvdbyte=10370 sentpkt=13 rcvdpkt=16 utmaction="allow" countapp=1 tz="+0000"
 
 parse.sh
@@ -63,7 +64,7 @@ done
 `\K` only output what comes after\
 `[` Starts a character set\
 `^ ` end delimiter\
-`]` Ends the charcter set
+`]` Ends the charcter set\
 `+` match all characters
 > event_time:1751457595|source_ip:172.24.13.87|target_ip:34.120.142.18|target_port:443|event_action:"allow"
 
