@@ -63,10 +63,14 @@ done
 ```
 `\K` only output what comes after\
 `[` Starts a character set\
-`^ ` end delimiter\
+`^ ` end delimiter, e.g. space
+`^"` end delimiter, e.g. quote\
 `]` Ends the charcter set\
 `+` match all characters
-> event_time:1751457595|source_ip:172.24.13.87|target_ip:34.120.142.18|target_port:443|event_action:"allow"
+```
+tail rsyslog.log | parse.sh >> parsedlog.db
+```
+> event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`"allow"`
 
 ### <ins>Threat hunting \/ detection</ins>
 :bookmark:  **Search "mimikatz" form the log since last check**
