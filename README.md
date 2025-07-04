@@ -60,8 +60,11 @@ while IFS= read -r line; do
   echo "event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
 done
 ```
-`-r` parameter 1\
-`-t` parameter 2
+`\K` only output what comes after\
+`[` Starts a character set\
+`^ ` end delimiter\
+`]` Ends the charcter set
+`+` match all characters
 > event_time:1751457595|source_ip:172.24.13.87|target_ip:34.120.142.18|target_port:443|event_action:"allow"
 
 ### <ins>Threat hunting \/ detection</ins>
