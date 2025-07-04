@@ -31,9 +31,13 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 
 in the /etc/rsyslog.conf, configure to use timestamp as file name, e.g. rsyslog-202507020420.log
 
-``` 
+```
+module(load="imtcp")
+input(type="imtcp" port="514")
+
 $template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MINUTE%.log"
 *.* ?CustomTemplate;RSYSLOG_TraditionalFileFormat
+
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 ```
 then restart rsyslog service to take effective
