@@ -53,26 +53,28 @@ then restart rsyslog service to take effective
 ```
 #!/bin/bash
 while IFS= read -r line; do
+  log_time=$(echo "$line" | awk -F' ' '{print $1 " " $2i " " $3}')
   event_time=$(echo "$line" | awk -F'timestamp=' '{print $2}' | awk -F' ' '{print $1}')
   source_ip=$(echo "$line" | awk -F'srcip=' '{print $2}' | awk -F' ' '{print $1}')
   target_ip=$(echo "$line" | awk -F'dstip=' '{print $2}' | awk -F' ' '{print $1}')
   target_port=$(echo "$line" | awk -F'dstport=' '{print $2}' | awk -F' ' '{print $1}')
   event_action=$(echo "$line" | awk -F'utmaction="' '{print $2}' | awk -F'" ' '{print $1}')
 
-  echo "event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
+  echo "log_time:$log_time|event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
 done
 ```
 OR grep regular expression (less performance)
 ``` 
 #!/bin/bash
 while IFS= read -r line; do
+  log_time=$(echo "$line" | awk -F' ' '{print $1 " " $2i " " $3}')
   event_time=$(echo "$line" | grep -oP 'timestamp=\K[^ ]+')
   source_ip=$(echo "$line" | grep -oP 'srcip=\K[^ ]+')
   target_ip=$(echo "$line" | grep -oP 'dstip=\K[^ ]+')
   target_port=$(echo "$line" | grep -oP 'dstport=\K[^ ]+')
   event_action=$(echo "$line" | grep -oP 'utmaction="\K[^" ]+')
 
-  echo "event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
+  echo "log_time:$log_time|event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
 done
 ```
 `\K` only output what comes after\
