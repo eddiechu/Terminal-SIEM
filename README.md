@@ -93,8 +93,10 @@ OR
 detection.sh
 ```
 #!/bin/bash
-grep -i "mimikatz"
-grep -i "rm" | grep -i ".bash_history"
+while IFS= read -r line; do
+  echo "$line" | grep -i "mimikatz"
+  echo "$line" | grep -i "rm" | grep -i ".bash_history"
+done
 ```
 ```
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
