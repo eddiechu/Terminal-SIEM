@@ -68,27 +68,7 @@ while IFS= read -r line; do
   echo "log_time:$log_time|event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
 done
 ```
-OR grep regular expression (less performance)
-``` 
-#!/bin/bash
-while IFS= read -r line; do
-  log_time=$(echo "$line" | awk -F' ' '{print $1 " " $2i " " $3}')
-  event_time=$(echo "$line" | grep -oP 'timestamp=\K[^ ]+')
-  source_ip=$(echo "$line" | grep -oP 'srcip=\K[^ ]+')
-  target_ip=$(echo "$line" | grep -oP 'dstip=\K[^ ]+')
-  target_port=$(echo "$line" | grep -oP 'dstport=\K[^ ]+')
-  event_action=$(echo "$line" | grep -oP 'utmaction="\K[^" ]+')
-
-  echo "log_time:$log_time|event_time:$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port:$target_port|event_action:\"$event_action\""
-done
-```
-`\K` only output what comes after\
-`[` Starts a character set\
-`^ ` end delimiter, e.g. space
-`^"` quote
-`^}` }\
-`]` Ends the charcter set\
-`+` match all characters
+Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient
 ```
 tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db
 ```
