@@ -79,6 +79,13 @@ To archive `tail` .. `grep` in multiple processes, either
 ```
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
 ```
+OR
+```
+tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
+``` 
+`parallel -j 0 ...` run in multiple processes
+OR
+
 detection.sh
 ```
 #!/bin/bash
@@ -88,12 +95,10 @@ grep -i "rm" | grep -i ".bash_history"
 ```
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
 ```
-
 OR
 ```
-tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
+tail rsyslog.log | parallel -j 0 --pipe detection.sh'
 ``` 
-`parallel -j 0 ...` run in multiple processes
 
 
 #
