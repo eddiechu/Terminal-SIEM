@@ -85,7 +85,7 @@ tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
 ``` 
 `parallel -j 0 ...` run in multiple processes
 OR
-> multiplu detection rules in one go
+> Multiplu searchs in one batch
 
 detection.sh
 ```
