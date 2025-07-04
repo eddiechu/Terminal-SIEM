@@ -97,10 +97,11 @@ done
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
 
-> [!TIP]
 > This way, you can run it by schedule, keep tracking last check position, no overlap happen
 
-To archive `tail` | `grep` in multiple processes, either
+> [!TIP]
+> To archive `tail` | `grep` in multiple processes, either
+
 ```bash
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
 ```
