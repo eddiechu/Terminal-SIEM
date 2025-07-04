@@ -71,7 +71,7 @@ done
 > [!TIP]
 >Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient
 
-```linux
+```bash
 tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db
 ```
 `parsedlog-204507021159.db`
