@@ -76,7 +76,7 @@ tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db
 > event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`"allow"`
 
 ### <ins>Threat hunting \/ detection</ins>
-:bookmark:  **Search "mimikatz" form the log since last check**
+:bookmark:  **Search threat keyword form the log since last check**
 ``` 
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
 ```
