@@ -96,7 +96,7 @@ done
 
 > This way, you can run it by schedule, keep tracking last check position, no overlap happen
 
-To archive `tail` .. `grep` in multiple processes, either
+To archive `tail`|`grep` in multiple processes, either
 ```
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
 ```
