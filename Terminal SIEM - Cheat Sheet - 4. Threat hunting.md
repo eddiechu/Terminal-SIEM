@@ -1,5 +1,13 @@
 # **Terminal SIEM - Cheat Sheet - Threat hunting**
+Here is a simple flow chart:
 
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 ## :bookmark:  **example 2**
 
 > sample log content
