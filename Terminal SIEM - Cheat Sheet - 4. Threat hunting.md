@@ -8,6 +8,7 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
 ## :bookmark:  **example 2**
 
 > sample log content
