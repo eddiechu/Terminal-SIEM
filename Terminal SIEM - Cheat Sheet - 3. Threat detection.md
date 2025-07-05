@@ -16,6 +16,7 @@ done
 ```bash
 tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
 ```
+`xargs -P 0 ...` run in multiple processes utilize all processors
 OR
 ```bash
 tail parsedlog.dat | parallel -j 0 --pipe detection.sh'
