@@ -1,9 +1,4 @@
 # **Terminal SIEM - Cheat Sheet - Threat hunting**
-Here is a simple flow chart:
-
-```mermaid
-info
-```
 
 ## :bookmark:  **example 2**
 
