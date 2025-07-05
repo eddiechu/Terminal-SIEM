@@ -1,7 +1,7 @@
 # **Terminal SIEM - Cheat Sheet - Threat detection**
 
 ## :bookmark:  **Search threat patterns in batch form parsed log**
-`detection.sh`
+:page_facing_up: `detection.sh`
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
