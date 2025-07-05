@@ -15,20 +15,20 @@ tail parsed.db | parallel -j 0 --pipe grep -i "source_ip:192.168.21.37"'
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
 > [!TIP]
-> Multiple searches in one batch
+> Multiple detections in one batch
 
 `detection.sh`
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
-  echo "$line" | grep -i "mimikatz"
-  echo "$line" | grep -i "rm" | grep -i ".bash_history"
+  echo "$line" | grep -i "file=mimikatz"
+  echo "$line" | grep -i "file=rm" | grep -i ".bash_history"
 done
 ```
 ```bash
-tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
+tail parsed.db | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
 ```
 OR
 ```bash
-tail rsyslog.log | parallel -j 0 --pipe detection.sh'
+tail parsed.db | parallel -j 0 --pipe detection.sh'
 ``` 
