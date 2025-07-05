@@ -21,8 +21,8 @@ tail parsedlog.dat | parallel -j 0 --pipe grep -E "log_type:firewall.*source_ip:
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
-  echo "$line" | grep -i "file:mimikatz"
-  echo "$line" | grep -i "file:rm" | grep -i ".bash_history"
+  echo "$line" | grep -i "log_type:windows" | grep -i "file:mimikatz"
+  echo "$line" | grep -i "log_type:linux" | grep -i "file:rm" | grep -i ".bash_history"
 done
 ```
 ```bash
