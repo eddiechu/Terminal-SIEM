@@ -97,7 +97,7 @@ done
 `stat -c %s ...` total characters in the file\
 `echo $lastpost ...` store the total characters as last position in the .pos file\
 `tail -c +$pos ...` get the content after number of characters \/ since last check\
-`xargs -P 0 ...` run in multiple processes\
+`xargs -P 0 ...` run in multiple processes
 
 > This way, you can run it by schedule, keep tracking last check position, no duplication happen
 
