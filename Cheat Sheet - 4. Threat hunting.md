@@ -1,7 +1,7 @@
 # **Terminal SIEM**
 # **Cheat Sheet - Threat hunting**
 
-:bookmark:  **example 2**
+## :bookmark:  **example 2**
 
 > sample log content
 
