@@ -11,9 +11,9 @@ tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat
 `parsedlog-204507021159.dat`
 > event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`"allow"`
 
-e.g. extract source IP from the syslog between\
-`source_ip:` and ` ` (space) :arrow_right: `awk -F'srcip=' '{print $2}' | awk -F' ' '{print $1}')` or\
-`source_ip:` and ` srcport=` :arrow_right: `awk -F'srcip=' '{print $2}' | awk -F' srcport=' '{print $1}')`
+e.g. extract source IP from the syslog\
+between `source_ip:` and ` ` (space) :arrow_right: `awk -F'srcip=' '{print $2}' | awk -F' ' '{print $1}')` or\
+between `source_ip:` and ` srcport=` :arrow_right: `awk -F'srcip=' '{print $2}' | awk -F' srcport=' '{print $1}')`
 
 `parse.sh` 
 ```bash
