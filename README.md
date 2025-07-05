@@ -25,7 +25,7 @@ Retention | **File management** | Index management
 Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel, xargs, file management, etc (*may need Golang and Python for advanced usage*)** | Product knowledge
 
 ## **Cheat Sheet**
-Start from here, go to more adotable and advanced with the help of your Gen AI buddies
+Start from here, go to more adaptable and advanced with the help of your Gen AI buddies
 
 ### <ins>Log Collection</ins>
 :bookmark:  **Consolidate all syslog sources to a single file, use timestamp as file name**
