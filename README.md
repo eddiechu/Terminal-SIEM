@@ -37,7 +37,7 @@ Cheat Sheet [Threat hunting](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%204.%20Thre
 
 
 #
-<!-- siem
+siem
 Security information and event management
 blue team
 soc
@@ -54,4 +54,3 @@ collection
 parsing
 threat detection
 threat hunting
--->
