@@ -1,5 +1,4 @@
-# **Terminal SIEM**
-# **Cheat Sheet - Log Collection**
+# **Terminal SIEM - Cheat Sheet - Log Collection**
 
 ## :bookmark:  **Consolidate all syslog sources to a single file, use timestamp as file name**
 
