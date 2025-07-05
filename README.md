@@ -48,4 +48,10 @@ search
 index
 security
 nosql
+syslog
+rsyslog
+collection
+parsing
+threat detection
+threat hunting
 -->
