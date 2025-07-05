@@ -14,9 +14,6 @@ tail parsedlog.db | parallel -j 0 --pipe grep -i "source_ip:192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
-
-
-
 > [!TIP]
 > Multiple detections in one batch
 
