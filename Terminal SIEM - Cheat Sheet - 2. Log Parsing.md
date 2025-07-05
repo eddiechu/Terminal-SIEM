@@ -11,7 +11,7 @@ between `srcip=` and ` ` (space) :arrow_right: `awk -F'`srcip=`' '{print $2}' | 
 or\
 between `srcip=` and ` srcport=` :arrow_right: `awk -F'`srcip=`' '{print $2}' | awk -F'` srcport=`' '{print $1}')`
 
-`:page_facing_up: parse.sh` 
+:page_facing_up: `parse.sh` 
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
