@@ -79,7 +79,7 @@ done
 
 ---
 
-### <ins>Threat hunting \/ detection</ins>
+### <ins>Threat detection</ins>
 :bookmark:  **Search threat keyword form the log since last check**
 ```bash
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
@@ -134,8 +134,7 @@ OR
 tail rsyslog.log | parallel -j 0 --pipe detection.sh'
 ``` 
 
-
-#
+### <ins>Threat hunting</ins>
 :bookmark:  **example 2**
 
 > sample log content
