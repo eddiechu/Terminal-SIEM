@@ -27,20 +27,25 @@ Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel,
 ## **Cheat Sheet**
 Start from here, go to more adaptable and advanced with the help of your Gen AI buddies
 
-Cheat Sheet [Log Collection](Cheat%20Sheet%20-%201.%20Log%20Collection.md)
+Cheat Sheet [Log Collection](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%201.%20Log%20Collection.md)
 
-Cheat Sheet [Log Parsing](Cheat%20Sheet%20-%202.%20Log%20Parsing.md)
+Cheat Sheet [Log Parsing](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%202.%20Log%20Parsing.md)
 
-Cheat Sheet [Threat detection](Cheat%20Sheet%20-%203.%20Threat%20detection.md)
+Cheat Sheet [Threat detection](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%203.%20Threat%20detection.md)
 
-Cheat Sheet [Threat hunting](Cheat%20Sheet%20-%204.%20Threat%20hunting.md)
+Cheat Sheet [Threat hunting](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%204.%20Threat%20hunting.md)
 
 
 #
 <!-- siem
+Security information and event management
+blue team
+soc
+red team
 opensearch
 elasticsearch
 search
 index
 security
+nosql
 -->
