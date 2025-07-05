@@ -1,5 +1,4 @@
-# **Terminal SIEM**
-# **Cheat Sheet - Threat hunting**
+# **Terminal SIEM - Cheat Sheet - Threat hunting**
 
 ## :bookmark:  **example 2**
 
