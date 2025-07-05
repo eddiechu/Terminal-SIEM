@@ -57,7 +57,7 @@ done
 `tail -c +$pos ...` get the content after number of characters \/ since last check\
 `xargs -P 0 ...` run in multiple processes
 
-This way, you can run it by schedule, keep tracking last check position, no duplication happen
+This way, you can run it by schedule, keep tracking last check position, avoid duplication
 
 > [!TIP]
 > another way to have multiple processing, Linux GNU parallel
