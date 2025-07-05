@@ -37,6 +37,7 @@ Cheat Sheet [Threat hunting](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%204.%20Thre
 
 
 #
+#tag
 siem
 Security information and event management
 blue team
