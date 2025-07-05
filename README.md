@@ -25,7 +25,7 @@ Retention | **File management** | Index management
 Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel, xargs, file management, etc (*may need Golang and Python for advanced usage*)** | Product knowledge
 
 ## **Cheat Sheet**
-Start from here, go to more adaptable and advanced with the help of your Gen AI buddies
+Start from here, then go to more adaptable and advanced with the help of your Gen AI buddies
 
 Cheat Sheet [Log Collection](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%201.%20Log%20Collection.md)
 
