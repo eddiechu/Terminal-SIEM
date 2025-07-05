@@ -67,4 +67,4 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
----
+--
