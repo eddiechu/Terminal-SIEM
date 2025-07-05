@@ -34,7 +34,7 @@ done
 >Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient
 
 ---
-:bookmark:  **Parse syslog since last check**
+## :bookmark:  **Parse syslog since last check**
 ```bash
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db'; done
 ```
