@@ -7,9 +7,11 @@
 while IFS= read -r line; do
   if [ "$line" =~ "log_type:windows" ] && [ "$line" =~ "file:mimikatz" ]; then
     echo "Windows malware, mimikatz found!"
+    echo $line
   fi
   if [ "$line" =~ "log_type:linux" ] && [ "$line" =~ "file:rm" ] && [ "$line" =~ ".bash_history" ]; then
     echo "Linux suspious activity found!"
+    echo $line
   fi
 done
 ```
