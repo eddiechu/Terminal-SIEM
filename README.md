@@ -78,7 +78,29 @@ done
 >Regular expression like `grep -oP 'utmaction="\K[^" ]+'` is not recommanded, because of less efficient
 
 ---
+:bookmark:  **Parse syslog since last check**
+```bash
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db'; done
+```
+OR
+```bash
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`;
+do pos=$(cat ${f}.lastpos); 
+  lastpos=$(stat -c %s ${f}); 
+  echo $lastpos > ${f}.lastpos;
 
+  tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db'; 
+done
+```
+`find ... -mmin -3` find file last modified within 3 minutes\
+`stat -c %s ...` total characters in the file\
+`echo $lastpost ...` store the total characters as last position in the .pos file\
+`tail -c +$pos ...` get the content after number of characters \/ since last check\
+`xargs -P 0 ...` run in multiple processes\
+
+> This way, you can run it by schedule, keep tracking last check position, no duplication happen
+
+---
 ### <ins>Threat detection</ins>
 :bookmark:  **Search threat keyword form the log since last check**
 ```bash
@@ -101,7 +123,7 @@ done
 `xargs -P 0 ...` run in multiple processes\
 `grep -i ...` search text, case in-sensitive
 
-> This way, you can run it by schedule, keep tracking last check position, no overlap happen
+> This way, you can run it by schedule, keep tracking last check position, no duplication happen
 
 > [!TIP]
 > To archive `tail` | `grep` in multiple processes, either
