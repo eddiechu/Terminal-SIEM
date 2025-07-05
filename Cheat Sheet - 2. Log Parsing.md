@@ -1,7 +1,6 @@
 # **Terminal SIEM**
-# **Cheat Sheet - 2. Log Parsing**
+# **Cheat Sheet - Log Parsing**
 
-## <ins>Log Parsing</ins>
 :bookmark:  **Parse syslog to standard schema with delimiator of "|"**
 
 > syslog example
