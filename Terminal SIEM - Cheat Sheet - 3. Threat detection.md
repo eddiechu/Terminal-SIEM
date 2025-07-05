@@ -1,9 +1,6 @@
 # **Terminal SIEM - Cheat Sheet - Threat detection**
 
-## :bookmark:  **Search threat keyword form the syslog or parsed log**
-> [!TIP]
-> Multiple detections in one batch
-
+## :bookmark:  **Search threat patterns form the syslog or parsed log**
 `detection.sh`
 ```bash
 #!/bin/bash
