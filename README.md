@@ -25,6 +25,7 @@ Retention | **File management** | Index management
 Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel, xargs, file management, etc (*may need Golang and Python for advanced usage*)** | Product knowledge
 
 ## **Cheat Sheet**
+Start from here, go to more adotable and advanced with the help of your Gen AI buddies
 
 ### <ins>Log Collection</ins>
 :bookmark:  **Consolidate all syslog sources to a single file, use timestamp as file name**
@@ -100,6 +101,14 @@ done
 
 > This way, you can run it by schedule, keep tracking last check position, no duplication happen
 
+> [!TIP]
+> another way to have multiple processing, Linux GNU parallel
+
+```bash
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | parallel -j 0 --pipe parse.sh >> parsedlog-$(date +%Y%m%d%H%M).db'; done
+```
+`parallel -j 0 ...` run in multiple processes utilize all processors
+
 ---
 ### <ins>Threat detection</ins>
 :bookmark:  **Search threat keyword form the log since last check**
@@ -135,7 +144,7 @@ OR
 ```bash
 tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
 ```
-`parallel -j 0 ...` run in multiple processes
+`parallel -j 0 ...` run in multiple processes utilize all processors
 
 > [!TIP]
 > Multiple searches in one batch
