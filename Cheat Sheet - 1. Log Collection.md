@@ -1,7 +1,6 @@
 # **Terminal SIEM**
-# **Cheat Sheet - 1. Log Collection**
+# **Cheat Sheet - Log Collection**
 
-## <ins>Log Collection</ins>
 :bookmark:  **Consolidate all syslog sources to a single file, use timestamp as file name**
 
 in the /etc/rsyslog.conf, configure to use TCP (minimize log loss) and timestamp as file name, e.g. rsyslog-204507020420.log
