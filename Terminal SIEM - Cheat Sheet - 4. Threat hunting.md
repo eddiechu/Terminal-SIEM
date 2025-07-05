@@ -32,3 +32,5 @@ find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
+<-- https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
+-->
