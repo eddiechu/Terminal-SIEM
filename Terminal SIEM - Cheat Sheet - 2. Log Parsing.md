@@ -7,7 +7,8 @@
 > `Jul  2 11:59:57` firewall.office.local logver=904012795 timestamp=`1751457595` devname="office-fw01" devid="TGVM8VTM20000284" vd="root" date=2045-07-02 time=11:59:55 eventtime=1751457595817641505 logid="0000000019" type="traffic" subtype="forward" level="notice" srcip=`192.168.13.87` srcport=52944 srcintf="port2" srcintfrole="undefined" dstip=`34.120.146.18` dstport=`443` dstintf="port1" dstintfrole="undefined" srccountry="Reserved" dstcountry="United States" sessionid=2897923 proto=6 action="server-rst" policyid=1 policytype="policy" poluuid="c3754272-8221-51ef-2830-20a9f9ffa552" policyname="Allow to Internet" service="HTTPS" trandisp="snat" transip=192.168.90.5 transport=52944 appid=57465 app="Palo.Alto.Networks.Cortex.XDR" appcat="General.Interest" apprisk="elevated" applist="block-high-risk" duration=5 sentbyte=4100 rcvdbyte=10370 sentpkt=13 rcvdpkt=16 utmaction="`allow`" countapp=1 tz="+0000"
 
 e.g. extract source IP from the syslog\
-between `source_ip:` and ` ` (space) :arrow_right: `awk -F'`srcip=`' '{print $2}' | awk -F'` `' '{print $1}')` or\
+between `source_ip:` and ` ` (space) :arrow_right: `awk -F'`srcip=`' '{print $2}' | awk -F'` `' '{print $1}')`\
+or\
 between `source_ip:` and ` srcport=` :arrow_right: `awk -F'`srcip=`' '{print $2}' | awk -F'` srcport=`' '{print $1}')`
 
 `parse.sh` 
