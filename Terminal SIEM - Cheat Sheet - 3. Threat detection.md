@@ -3,14 +3,14 @@
 ## :bookmark:  **Search threat keyword form the syslog or parsed log**
 ```bash
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
-tail parsedlog.db | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "source_ip:192.168.21.37"'; done
+tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "source_ip:192.168.21.37"'; done
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
 
 OR
 ```bash
 tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"'
-tail parsedlog.db | parallel -j 0 --pipe grep -i "source_ip:192.168.21.37"'
+tail parsedlog.dat | parallel -j 0 --pipe grep -i "source_ip:192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
@@ -26,9 +26,9 @@ while IFS= read -r line; do
 done
 ```
 ```bash
-tail parsedlog.db | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
+tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
 ```
 OR
 ```bash
-tail parsedlog.db | parallel -j 0 --pipe detection.sh'
+tail parsedlog.dat | parallel -j 0 --pipe detection.sh'
 ``` 
