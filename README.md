@@ -29,6 +29,12 @@ Start from here, go to more adaptable and advanced with the help of your Gen AI 
 
 Cheat Sheet [Log Collection](Cheat%20Sheet%20-%201.%20Log%20Collection.md)
 
+Cheat Sheet [Log Parsing](Cheat%20Sheet%20-%202.%20Log%20Parsing.md)
+
+Cheat Sheet [Threat detection](Cheat%20Sheet%20-%203.%20Threat%20detection.md)
+
+Cheat Sheet [Threat hunting](Cheat%20Sheet%20-%204.%20Threat%20hunting.md)
+
 
 #
 <!-- siem
