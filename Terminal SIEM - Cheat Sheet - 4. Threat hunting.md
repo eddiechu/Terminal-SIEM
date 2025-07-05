@@ -1,6 +1,6 @@
 # **Terminal SIEM - Cheat Sheet - Threat hunting**
 
-## :bookmark:  **example 2**
+## :bookmark:  **Search threat patterns form the syslog or parsed log**
 
 ```bash
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
