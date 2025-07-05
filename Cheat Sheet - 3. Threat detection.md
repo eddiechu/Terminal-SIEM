@@ -1,5 +1,4 @@
-# **Terminal SIEM**
-# **Cheat Sheet - Threat detection**
+# **Terminal SIEM - Cheat Sheet - Threat detection**
 
 ## :bookmark:  **Search threat keyword form the log since last check**
 ```bash
