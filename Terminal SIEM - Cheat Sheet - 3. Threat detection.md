@@ -21,8 +21,12 @@ tail parsedlog.dat | parallel -j 0 --pipe grep -E "log_type:firewall.*source_ip:
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
-  echo "$line" | grep -i "log_type:windows" | grep -i "file:mimikatz"
-  echo "$line" | grep -i "log_type:linux" | grep -i "file:rm" | grep -i ".bash_history"
+  if [ "$line" =~ "log_type:windows ] && [ "$line" =~ "file:mimikatz" ]; then
+    echo "Windows malware, mimikatz found!"
+  fi
+  if [ "$line" =~ "log_type:linux ] && [ "$line" =~ "file:rm" ] && [ "$line" =~ ".bash_history" ]; then
+    echo "Linux suspious activity found!"
+  fi
 done
 ```
 ```bash
