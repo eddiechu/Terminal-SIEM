@@ -35,9 +35,6 @@ find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
-<!-- https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
--->
-
 ---
 <br />
 <br />
@@ -57,6 +54,31 @@ find rsyslog*.log -type f -maxdepth 1 -mmin -30 | parallel -j 0 grep -i "mimikat
 find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
+
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Aggragate login failed per user**
+
+```bash
+find rsyslog*.log -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
+find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
+
+grep -i "bad password" filteradp-*.txt | grep -i "username" | grep -v "CLIENT_IP_ADDRESS = 172.30.40.18\|CLIENT_IP_ADDRESS = 172.30.40.77\|CLIENT_IP_ADDRESS = 172.30.40.78\|CLIENT_IP_ADDRESS = 172.18.30.11" | 
+printf "%s %s\n" $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'target_ip=' '{print $2}' | awk -F'|' '{print $1}') | sort | uniq -c
+
+```
+`xargs -P 0 ...` run in multiple processes utilize all processors
+
+OR
+```bash
+find rsyslog*.log -type f -maxdepth 1 -mmin -30 | parallel -j 0 grep -i "mimikatz"
+find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
+```
+`parallel -j 0 ...` run in multiple processes utilize all processors
+
 
 <!-- https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
 -->
