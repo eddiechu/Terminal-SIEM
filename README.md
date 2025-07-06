@@ -6,7 +6,7 @@
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | --- 
-Strength | **Super light weight, because of no indexing, database, GUI, and minimal regular expression<br />Versatile detection capability, develop what ever search criteria you think and with the help of Gen AI** | GUI
+Strength | **Super light weight, because of no indexing, database, GUI, and minimal regular expression<br />Super detection capability, develop what ever search criteria you think and with the help of Gen AI** | GUI
 Technology | **Linux terminal, file based** | Web based, index and NoSQL
 Production architecture | **ONE host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
