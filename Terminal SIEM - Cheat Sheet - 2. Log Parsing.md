@@ -25,7 +25,8 @@ while IFS= read -r line; do
     target_ip=$(echo "$line" | awk -F'dstip=' '{print $2}' | awk -F' ' '{print $1}')
     target_port=$(echo "$line" | awk -F'dstport=' '{print $2}' | awk -F' ' '{print $1}')
     event_action=$(echo "$line" | awk -F'utmaction="' '{print $2}' | awk -F'" ' '{print $1}')
-    echo "log_time=$log_time|log_type=$log_type|event_time=$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port=$target_port|event_action:\"$event_action\""
+<br />
+    echo "log_time=$log_time|log_type=$log_type|event_time=$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port=$target_port|event_action:$event_action"
   fi
 done
 ```
@@ -36,7 +37,7 @@ done
 tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat
 ```
 :page_facing_up: `parsedlog-204507021159.dat`
-> log_time:`Jul 2 11:59:57`|log_type:`firewall`|event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`"allow"`
+> log_time:`Jul 2 11:59:57`|log_type:`firewall`|event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`allow`
 
 ---
 <br />
