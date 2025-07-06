@@ -39,6 +39,8 @@ Indicators of compromise (IoCs), such as malicious URLs, IP addresses, and file 
 #!/bin/bash
 while IFS= read -r line; do
   echo "$line" | xargs -P 0 -I {} sh -c 'echo "{}" | grep -w -F -f baddomain.txt' >> ctiresult.txt
+  echo "$line" | xargs -P 0 -I {} sh -c 'echo "{}" | grep -w -F -f badip.txt' >> ctiresult.txt
+  echo "$line" | xargs -P 0 -I {} sh -c 'echo "{}" | grep -w -F -f badfile.txt' >> ctiresult.txt
 done
 ```
 
