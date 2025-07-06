@@ -37,6 +37,10 @@ tail rsyslog.log | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat
 > log_time:`Jul 2 11:59:57`|log_type:`firewall`|event_time:`1751457595`|source_ip:`192.168.13.87`|target_ip:`34.120.142.18`|target_port:`443`|event_action:`"allow"`
 
 ---
+<br />
+<br />
+<br />
+
 ## :bookmark:  **Parse syslog since last check**
 ```bash
 for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat'; done
