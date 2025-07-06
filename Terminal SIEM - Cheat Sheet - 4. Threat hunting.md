@@ -37,3 +37,26 @@ find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-
 
 <!-- https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
 -->
+
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Search threat patterns in last 30 minutes**
+
+```bash
+find rsyslog*.log -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
+find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
+```
+`xargs -P 0 ...` run in multiple processes utilize all processors
+
+OR
+```bash
+find rsyslog*.log -type f -maxdepth 1 -mmin -30 | parallel -j 0 grep -i "mimikatz"
+find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
+```
+`parallel -j 0 ...` run in multiple processes utilize all processors
+
+<!-- https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
+-->
