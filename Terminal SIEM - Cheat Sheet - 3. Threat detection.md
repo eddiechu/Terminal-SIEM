@@ -25,3 +25,10 @@ OR
 tail parsedlog.dat | parallel -j 0 --pipe detection.sh'
 ``` 
 `parallel -j 0 ...` run in multiple processes utilize all processors
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Search against cyber threat intelligence feed**
+Indicators of compromise (IoCs), such as malicious URLs, IP addresses, and file hashes
