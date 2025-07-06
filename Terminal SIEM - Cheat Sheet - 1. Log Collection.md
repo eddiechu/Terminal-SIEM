@@ -8,11 +8,18 @@ in the /etc/rsyslog.conf, configure to use TCP (minimize log loss) and timestamp
 module(load="imtcp")
 input(type="imtcp" port="514")
 
-$template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%%$MINUTE%.log"
+$template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%.log"
 *.* ?CustomTemplate;RSYSLOG_TraditionalFileFormat
 
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 ```
 then restart rsyslog service to take effective
+
+:page_facing_up: `rsyslog-2045070206.log`\
+:page_facing_up: `rsyslog-2045070207.log`\
+:page_facing_up: `rsyslog-2045070208.log`\
+:page_facing_up: `rsyslog-2045070209.log`\
+:page_facing_up: `rsyslog-2045070210.log`\
+:page_facing_up: `rsyslog-2045070211.log`
 
 ---
