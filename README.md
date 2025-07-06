@@ -23,6 +23,11 @@ Patch / security management | **Linux** | Linux and product
 Store raw log | **Yes, raw log and parsed log** | No
 Retention | **File management** | Index management
 Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel, xargs, file management, etc (*may need Golang and Python for advanced usage*)** | Product knowledge
+Strength | **super light weight (because of no indexing, database, GUI, regular expression), super flexiable, can do what you want** | GUI
+
+<br />
+<br />
+<br />
 
 ## **Cheat Sheet**
 Start from here, then go to more adaptable and advanced with the help of your Gen AI buddies
