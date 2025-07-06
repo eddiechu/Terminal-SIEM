@@ -18,7 +18,7 @@ tail parsedlog.dat | parallel -j 0 --pipe grep -E "log_type:firewall.*source_ip:
 ---
 
  \
-2\
+
  
 
 ## :bookmark:  **Search threat patterns within date range**
