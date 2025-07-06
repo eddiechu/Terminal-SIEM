@@ -6,6 +6,7 @@
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | ---
+Strength | **Super light weight (because of no indexing, database, GUI, regular expression)<br />Super capability, can develop search criteria what ever you think, and with the help of Gen AI,** | GUI
 Technology | **Linux terminal, file based** | Web based, index and NoSQL
 Production architecture | **ONE host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
@@ -23,7 +24,6 @@ Patch / security management | **Linux** | Linux and product
 Store raw log | **Yes, raw log and parsed log** | No
 Retention | **File management** | Index management
 Skill set required | **Linux rsyslog, grep, awk, jq, find, sort, uniq, parallel, xargs, file management, etc (*may need Golang and Python for advanced usage*)** | Product knowledge
-Strength | **super light weight (because of no indexing, database, GUI, regular expression)<br />super capability, can do what you want** | GUI
 
 <br />
 <br />
