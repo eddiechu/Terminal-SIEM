@@ -16,6 +16,7 @@ tail parsedlog.dat | parallel -j 0 --pipe grep -E "log_type:firewall.*source_ip:
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
 ---
+
 \
 \
 \
