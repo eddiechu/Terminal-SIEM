@@ -11,7 +11,7 @@ tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "log_type:firew
 OR
 ```bash
 tail rsyslog.log | parallel -j 0 --pipe grep -i "mimikatz"
-tail parsedlog.dat | parallel -j 0 --pipe grep -E "log_type:firewall.*source_ip:192.168.21.37"
+tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type:firewall" | grep -i "source_ip:192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
@@ -31,7 +31,7 @@ find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-
 OR
 ```bash
 find rsyslog*.log -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | parallel -j 0 grep -i "mimikatz"
-find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | parallel -j 0 grep -E "log_type:firewall.*source_ip:192.168.21.37"
+find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | parallel -j 0 'grep -i "log_type:firewall" | grep -i "source_ip:192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
