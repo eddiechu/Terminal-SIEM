@@ -25,7 +25,7 @@ while IFS= read -r line; do
     target_ip=$(echo "$line" | awk -F'dstip=' '{print $2}' | awk -F' ' '{print $1}')
     target_port=$(echo "$line" | awk -F'dstport=' '{print $2}' | awk -F' ' '{print $1}')
     event_action=$(echo "$line" | awk -F'utmaction="' '{print $2}' | awk -F'" ' '{print $1}')
-<br />
+
     echo "log_time=$log_time|log_type=$log_type|event_time=$event_time|source_ip:\"$source_ip\"|target_ip:\"$target_ip\"|target_port=$target_port|event_action:$event_action"
   fi
 done
