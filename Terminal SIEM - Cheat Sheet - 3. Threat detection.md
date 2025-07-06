@@ -38,11 +38,11 @@ Indicators of compromise (IoCs), such as malicious URLs, IP addresses, and file 
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
-  echo "$line" | xargs -P 0 -I {} sh -c 'echo "{}" | grep -w -F -f baddomain.txt' >> result.txt
+  echo "$line" | xargs -P 0 -I {} sh -c 'echo "{}" | grep -w -F -f baddomain.txt' >> ctiresult.txt
 done
 ```
 
-the matched log entry append in result.txt for alert.
+the matched log entry append in ctiresult.txt for alert.
 
 ```bash
 tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
