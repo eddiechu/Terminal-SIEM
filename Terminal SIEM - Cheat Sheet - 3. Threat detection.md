@@ -38,16 +38,12 @@ Indicators of compromise (IoCs), such as malicious URLs, IP addresses, and file 
 ```bash
 #!/bin/bash
 while IFS= read -r line; do
-  if [ "$line" =~ "log_type=windows" ] && [ "$line" =~ "file=mimikatz" ]; then
-    echo "Windows malware, mimikatz found!"
-    echo $line
-  fi
-  if [ "$line" =~ "log_type=linux" ] && [ "$line" =~ "file=rm" ] && [ "$line" =~ ".bash_history" ]; then
-    echo "Linux suspious activity found!"
-    echo $line
-  fi
+  echo "$line" | xargs -P 0 -I {} sh -c 'echo "{}" | grep -w -F -f baddomain.txt' >> result.txt
 done
 ```
+
+the matched log entry append in result.txt for alert.
+
 ```bash
 tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | detection.sh'
 ```
