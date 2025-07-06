@@ -3,8 +3,8 @@
 ## :bookmark:  **Search threat patterns form the syslog or parsed log**
 
 ```bash
-tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'; done
-tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'; done
+tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
+tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
 
