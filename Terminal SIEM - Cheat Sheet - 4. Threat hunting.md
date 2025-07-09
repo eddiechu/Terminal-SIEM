@@ -80,5 +80,13 @@ find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
 
-<!-- https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
+<!-- 
+event id 4771
+Account Name:	
+IpAddress
+Keywords: Audit Failure
+Client Address
+Kerberos pre-authentication failed.
+
+https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
 -->
