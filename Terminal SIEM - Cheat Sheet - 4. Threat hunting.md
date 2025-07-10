@@ -88,5 +88,30 @@ Keywords: Audit Failure
 Client Address
 Kerberos pre-authentication failed.
 
+
+
+CommandLine "C:\Users\user1\Desktop\SysinternalsSuite\ADExplorer64.exe"  
+ User LAB\user1 
+ Process Create:
+Process Create (rule: ProcessCreate)
+
+
+ 
+Process Create:
+QueryName: elasticpoint.net
+task category Dns query (rule: DnsQuery)
+
+
+
+Network connection detected:
+DestinationIp: 192.168.157.131
+DestinationHostname: -
+DestinationPort: 3389
+Image: C:\Windows\System32\mstsc.exe
+User: LAB\user1
+SourceIp: 192.168.157.130
+
+Source: Sysmon
+
 https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
 -->
