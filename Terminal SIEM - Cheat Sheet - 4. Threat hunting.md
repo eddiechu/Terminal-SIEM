@@ -94,6 +94,23 @@ then
 fi
 ```
 
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Search rare user behaviour within 4 weeks**
+
+```bash
+tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
+tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
+```
+`xargs -P 0 ...` run in multiple processes utilize all processors
+`parallel -j 0 ...` run in multiple processes utilize all processors
+---
+<br />
+<br />
+<br />
 
 <!-- 
 event id 4771
