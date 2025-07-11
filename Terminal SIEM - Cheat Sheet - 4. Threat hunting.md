@@ -63,8 +63,7 @@ find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_
 ## :bookmark:  **Aggragate unique user login failed in last 30 minutes**
 
 ```bash
-find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=windows" | grep -i "log_eventid=4771" | grep -i "authentication failed" | grep -i -v "source_ip=192.168.100.2\|source_ip=192.168.100.3" | printf "%s %s\n" $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}') | sort | uniq -c
-
+find parsedlog*.dat -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=windows" | grep -i "log_eventid=4771" | grep -i "authentication failed" | grep -i -v "source_ip=192.168.100.2\|source_ip=192.168.100.3" | while read -r line; do printf "%s %s\n" $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}'); done | sort | uniq -c
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
 
