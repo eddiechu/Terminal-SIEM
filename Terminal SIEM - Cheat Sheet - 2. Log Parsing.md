@@ -56,12 +56,11 @@ for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpo
 ```
 OR
 ```bash
-for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`;
-do pos=$(cat ${f}.lastpos); 
-  lastpos=$(stat -c %s ${f}); 
-  echo $lastpos > ${f}.lastpos;
-
-  tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat'; 
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; \
+do pos=$(cat ${f}.lastpos); \
+  lastpos=$(stat -c %s ${f}); \
+  echo $lastpos > ${f}.lastpos; \
+  tail -c +$pos ${f} | xargs -P 0 -I {} sh -c 'echo "{}" | parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat'; \
 done
 ```
 `find ... -mmin -3` find file last modified within 3 minutes\
