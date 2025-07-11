@@ -104,6 +104,9 @@ fi
 ## :bookmark:  **Search rare user behaviour within 4 weeks**
 
 ```bash
+while read -r line; do printf "%s %s\n" $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}'); done
+>> useractivity-$(date +%Y%m%d%H%M).dat
+
 tail parsedlog.dat | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
 tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
 ```
