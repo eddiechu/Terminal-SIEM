@@ -78,6 +78,11 @@ find parsedlog*.dat -maxdepth 1 -mmin -30 |
   done |
   sort | uniq -c
 ```
+>       1 tim.cook 192.168.100.23
+>      3 tim.cook 192.168.100.25
+>      1 john.stankey 192.168.100.42
+>      1 eddie.chu 192.168.100.172
+>     27 sundar.pichai 192.168.100.221
 
 
 <!-- 
