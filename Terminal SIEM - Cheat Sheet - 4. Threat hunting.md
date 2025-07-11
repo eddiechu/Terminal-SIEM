@@ -109,7 +109,7 @@ tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type=firewall" | grep -i
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
 `parallel -j 0 ...` run in multiple processes utilize all processors
----
+
 <br />
 <br />
 <br />
