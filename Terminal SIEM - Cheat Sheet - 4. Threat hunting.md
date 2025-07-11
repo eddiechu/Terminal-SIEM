@@ -90,7 +90,7 @@ If total unique user login failed great than 50
 
 if [[ $(find parsedlog*.dat -maxdepth 1 -mmin -30 | grep -i "log_type=windows" | grep -i "log_eventid=4771" | grep -i "authentication failed" | grep -i -v "source_ip=192.168.100.2\|source_ip=192.168.100.3" | while read -r line; do printf "%s %s\n" $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}'); done | sort | uniq | wc -l) -ge 50 ]];
 then
-  alert.sh ""
+  alert.sh "Warning! Total user login failed great than 50"
 fi
 ```
 
