@@ -116,8 +116,8 @@ tail parsedlog.dat | while read -r line; do \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}')); \
   keyword2=$(printf "%s" \
     $(echo "$line" | awk -F'cmd=' '{print $2}' | awk -F'|' '{print $1}')); \
-  find useractivity-*.dat -maxdepth 1 -mtime -28 | xargs -P 0 -n 1 grep -i "$keyword1" | grep -i "$keyword2"; \
-done
+  find useractivity-*.dat -maxdepth 1 -mtime -28 | xargs -P 0 -n 1 grep -i -H "$keyword1" | grep -i "$keyword2"; \
+done | wc -l
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
