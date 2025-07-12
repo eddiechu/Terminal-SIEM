@@ -101,7 +101,7 @@ fi
 <br />
 <br />
 
-## :bookmark:  **Search rare user behaviour within 4 weeks**
+## :bookmark:  **Search user behaviour within 4 weeks, it is rare if this appear less than 2**
 
 ```bash
 tail parsedlog.dat | while read -r line; do \
