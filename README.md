@@ -2,7 +2,7 @@
 > [!WARNING]
 > **under construction** ...\
 > <br />
-> Help administrator<br />without SIEM, <br />with SIEM but don't have coomplete telemetry for searching (becase of license cost) or <br />with SIEM but limited search function
+> Help administrator<br />without SIEM, <br />with SIEM but don't have coomplete telemetry for searching (becase of license cost) or <br />with SIEM but have limited search function
 
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
