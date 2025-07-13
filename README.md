@@ -7,7 +7,7 @@
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | --- 
-Strength | **<ins>Super light</ins> (because of no indexing, database and GUI)<br /><ins>Super fast</ins> (parallel processing and minimal the use of regular expression)<br /><ins>Unlimited search idea</ins>, what ever your want** | GUI
+Strength | **<ins>Super light</ins>, because of no indexing, database and GUI<br /><ins>Super fast</ins>, parallel processing and minimal the use of regular expression<br /><ins>Unlimited search idea</ins>, what ever your want** | GUI
 Technology | **Linux terminal, file based** | Web based, index and NoSQL
 Production architecture | **ONE host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
