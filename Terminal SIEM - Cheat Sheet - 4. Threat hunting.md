@@ -233,7 +233,7 @@ Search against captured user behaviour, see how many times appear in the past
 
 ```bash
 find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
-  awk -F'sent_size=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 104857600) print user sum[user]}'
+  awk -F'sent_byte=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 104857600) print user sum[user]}'
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
