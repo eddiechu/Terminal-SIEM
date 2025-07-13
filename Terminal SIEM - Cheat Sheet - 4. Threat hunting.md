@@ -103,6 +103,8 @@ fi
 
 ## :bookmark:  **Search user behaviour within 4 weeks, it is rare if this appear less than 2**
 
+capture user behaviour every day
+
 ```bash
 tail parsedlog.dat | while read -r line; do \
   printf "%s %s\n" \
@@ -110,6 +112,9 @@ tail parsedlog.dat | while read -r line; do \
     $(echo "$line" | awk -F'cmd=' '{print $2}' | awk -F'|' '{print $1}'); \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
+
+search against captured user behaviour, see how many times appear in the past
+
 ```bash
 tail parsedlog.dat | while read -r line; do \
   keyword1=$(printf "%s" \
