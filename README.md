@@ -1,6 +1,7 @@
 # **Terminal SIEM**
 > [!NOTE]
-> under construction ...\
+> **under construction** ...\
+> <br />
 > Help administrator without SIEM or with SIEM but don't have coomplete telemetry for searching (becase of license cost), with SIEM but limited search function
 
 ## **Characteristics**
