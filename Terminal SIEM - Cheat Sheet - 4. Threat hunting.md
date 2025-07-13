@@ -120,11 +120,11 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 :page_facing_up: `useractivity-204507021158.dat`\
 :page_facing_up: `useractivity-204507021159.dat`
 
-> tim.cook cmd=uname\
+> michael.dell cmd=outlook.exe\
 > sundar.pichai cmd=ping.exe\
-> john.stankey cmd=tail\
+> john.stankey cmd=msteams.exe\
 > eddie.chu cmd=ADExplorer64.exe\
-> john.stankey cmd=ssh
+> john.stankey cmd=excel.exe
 
 
 Search against captured user behaviour, see how many times appear in the past
@@ -151,7 +151,8 @@ done | wc -l
 Capture user behaviour every minute
 
 ```bash
-tail parsedlog.dat | grep -i "=10.\|=172.16.\|=172.17.\|=172.18.\|=172.19.\|=172.20.\|=172.21.\|=172.22.\|=172.23.\|=172.24.\|=172.25.\|=172.26.\|=172.27.\|=172.28.\|=172.29.\|=172.30.\|=172.31.\|=192.168.\|=127.\|=169.254." | \
+tail parsedlog.dat | \
+grep -i "sysmon" | grep -i "=10.\|=172.16.\|=172.17.\|=172.18.\|=172.19.\|=172.20.\|=172.21.\|=172.22.\|=172.23.\|=172.24.\|=172.25.\|=172.26.\|=172.27.\|=172.28.\|=172.29.\|=172.30.\|=172.31.\|=192.168.\|=127.\|=169.254." | \
 while read -r line; do \
   printf "%s target_ip=%s\n" \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
@@ -166,7 +167,7 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 :page_facing_up: `useractivity-204507021158.dat`\
 :page_facing_up: `useractivity-204507021159.dat`
 
-> tim.cook target_ip=10.20.100.23\
+> michael.dell target_ip=10.20.100.23\
 > sundar.pichai target_ip=10.20.100.77\
 > john.stankey target_ip=10.30.100.32\
 > eddie.chu target_ip=10.20.200.123\
@@ -176,7 +177,8 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 Search against captured user behaviour, see how many times appear in the past
 
 ```bash
-tail parsedlog.dat | grep -i "=10.\|=172.16.\|=172.17.\|=172.18.\|=172.19.\|=172.20.\|=172.21.\|=172.22.\|=172.23.\|=172.24.\|=172.25.\|=172.26.\|=172.27.\|=172.28.\|=172.29.\|=172.30.\|=172.31.\|=192.168.\|=127.\|=169.254." | \
+tail parsedlog.dat | \
+grep -i "sysmon" | grep -i "=10.\|=172.16.\|=172.17.\|=172.18.\|=172.19.\|=172.20.\|=172.21.\|=172.22.\|=172.23.\|=172.24.\|=172.25.\|=172.26.\|=172.27.\|=172.28.\|=172.29.\|=172.30.\|=172.31.\|=192.168.\|=127.\|=169.254." | \
 while read -r line; do \
   keyword1=$(printf "%s" \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}')); \
