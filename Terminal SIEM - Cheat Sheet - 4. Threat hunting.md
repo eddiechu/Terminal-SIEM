@@ -124,7 +124,8 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 > sundar.pichai cmd=ping.exe\
 > john.stankey cmd=tail\
 > eddie.chu cmd=ADExplorer64.exe\
-> john.stankey cmd=ssh\
+> john.stankey cmd=ssh
+
 
 Search against captured user behaviour, see how many times appear in the past
 
