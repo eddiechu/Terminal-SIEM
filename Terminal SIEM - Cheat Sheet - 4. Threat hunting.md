@@ -103,7 +103,7 @@ fi
 
 ## :bookmark:  **Search user behaviour within 4 weeks, it is rare if this appear less than 2**
 
-capture user behaviour every day
+Capture user behaviour every minute
 
 ```bash
 tail parsedlog.dat | while read -r line; do \
@@ -113,7 +113,20 @@ tail parsedlog.dat | while read -r line; do \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
 
-search against captured user behaviour, see how many times appear in the past
+:page_facing_up: `useractivity-204507021154.dat`\
+:page_facing_up: `useractivity-204507021155.dat`\
+:page_facing_up: `useractivity-204507021156.dat`\
+:page_facing_up: `useractivity-204507021157.dat`\
+:page_facing_up: `useractivity-204507021158.dat`\
+:page_facing_up: `useractivity-204507021159.dat`
+
+> tim.cook bash
+> sundar.pichai ping
+> john.stankey zsh
+> eddie.chu cmd.exe
+> john.stankey ssh 
+
+Search against captured user behaviour, see how many times appear in the past
 
 ```bash
 tail parsedlog.dat | while read -r line; do \
