@@ -146,7 +146,7 @@ done | wc -l
 <br />
 <br />
 
-## :bookmark:  **Search user rare lateral connection within 4 weeks, if this appear less than 2**
+## :bookmark:  **Search rare lateral connection from the user within 4 weeks, if this appear less than 2**
 
 Capture user behaviour every minute
 
