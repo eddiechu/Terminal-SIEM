@@ -101,7 +101,7 @@ fi
 <br />
 <br />
 
-## :bookmark:  **Search user behaviour within 4 weeks, it is rare run command from the user if this appear less than 2**
+## :bookmark:  **Search rare run command from the user within 4 weeks, if this appear less than 2**
 
 Capture user behaviour every minute
 
@@ -146,7 +146,7 @@ done | wc -l
 <br />
 <br />
 
-## :bookmark:  **Search user behaviour within 4 weeks, it is rare lateral connection from the user if this appear less than 2**
+## :bookmark:  **Search user rare lateral connection within 4 weeks, if this appear less than 2**
 
 Capture user behaviour every minute
 
