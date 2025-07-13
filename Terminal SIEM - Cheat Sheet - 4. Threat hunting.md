@@ -101,7 +101,7 @@ fi
 <br />
 <br />
 
-## :bookmark:  **Search user behaviour, run command, within 4 weeks, it is rare if this appear less than 2**
+## :bookmark:  **Search user behaviour within 4 weeks, it is rare run command to the user if this appear less than 2**
 
 Capture user behaviour every minute
 
