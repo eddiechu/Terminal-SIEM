@@ -1,7 +1,7 @@
 # **Terminal SIEM**
 > [!NOTE]
 > under construction ...\
-> Help administrator without SIEM or with SIEM but don't have coomplete telemetry for searching becase of license cost, with SIEM but limited search function
+> Help administrator without SIEM or with SIEM but don't have coomplete telemetry for searching (becase of license cost), with SIEM but limited search function
 
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
