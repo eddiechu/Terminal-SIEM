@@ -23,3 +23,18 @@ then restart rsyslog service to take effective
 :page_facing_up: `rsyslog-2045070211.log`
 
 ---
+
+
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Pull log from SaaS, then inject to syslog**
+
+Pull log from SaaS, convert json format to one line CSV then inject to rsyslog
+```
+curl -X "GET" -H "accept: application/json" -H "Rest-Api-Token: abcdefghijklmnopqrstuvwxyz0123456789" "https://mysaas.com/api/events" | \
+  jq --raw-output '.result[] | del(.custom_attr) | [ keys[] as $k | .[$k] ] | @csv' | \
+  nc -w 0 -t 127.0.0.1 514
+```
