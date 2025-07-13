@@ -194,6 +194,50 @@ done | wc -l
 
 you can have user, process, target IP and more combination tracking
 
+
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Search abnormal upload from the user in past 24 hours, if it is more than 100MB**
+
+Capture user behaviour every minute
+
+```bash
+tail parsedlog.dat | grep -i -v "user=|" | grep -i -v "target_fqdn=|" | grep -i -v "sent_byte=|" | \
+while read -r line; do \
+  printf "%s %s sent_byte=%s\n" \
+    $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
+    $(echo "$line" | awk -F'target_fqdn=' '{print $2}' | awk -F'|' '{print $1}') \
+    $(echo "$line" | awk -F'sent_byte=' '{print $2}' | awk -F'|' '{print $1}'); \
+done >> useractivity-$(date +%Y%m%d%H%M).dat
+```
+
+:page_facing_up: `useractivity-204507021154.dat`\
+:page_facing_up: `useractivity-204507021155.dat`\
+:page_facing_up: `useractivity-204507021156.dat`\
+:page_facing_up: `useractivity-204507021157.dat`\
+:page_facing_up: `useractivity-204507021158.dat`\
+:page_facing_up: `useractivity-204507021159.dat`
+
+> michael.dell drive.google.com sent_byte=739347\
+> sundar.pichai us.yahoo.com sent_byte=98739\
+> john.stankey google.com sent_byte=23023298\
+> eddie.chu www.amazon.com sent_byte=203948\
+> michael.dell drive.google.com sent_byte=34082734\
+> john.stankey www.cnn.com sent_byte=137
+
+
+Search against captured user behaviour, see how many times appear in the past
+
+```bash
+find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
+  awk -F'sent_size=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 104857600) print user sum[user]}'
+```
+`xargs -P 0 ...` run in multiple processes utilize all processors \
+`parallel -j 0 ...` run in multiple processes utilize all processors
+
 <br />
 <br />
 <br />
