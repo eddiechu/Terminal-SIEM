@@ -141,6 +141,53 @@ done | wc -l
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Search user behaviour within 4 weeks, it is rare lateral connection to the user if this appear less than 2**
+
+Capture user behaviour every minute
+
+```bash
+tail parsedlog.dat | grep -i "=10.\|=172.16.\|=172.17.\|=172.18.\|=172.19.\|=172.20.\|=172.21.\|=172.22.\|=172.23.\|=172.24.\|=172.25.\|=172.26.\|=172.27.\|=172.28.\|=172.29.\|=172.30.\|=172.31.\|=192.168.\|=127.\|=169.254." | \
+while read -r line; do \
+  printf "%s target_ip=%s\n" \
+    $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
+    $(echo "$line" | awk -F'target_ip=' '{print $2}' | awk -F'|' '{print $1}'); \
+done >> useractivity-$(date +%Y%m%d%H%M).dat
+```
+
+:page_facing_up: `useractivity-204507021154.dat`\
+:page_facing_up: `useractivity-204507021155.dat`\
+:page_facing_up: `useractivity-204507021156.dat`\
+:page_facing_up: `useractivity-204507021157.dat`\
+:page_facing_up: `useractivity-204507021158.dat`\
+:page_facing_up: `useractivity-204507021159.dat`
+
+> tim.cook target_ip=10.20.100.23\
+> sundar.pichai target_ip=10.20.100.77\
+> john.stankey target_ip=10.30.100.32\
+> eddie.chu target_ip=10.20.200.123\
+> john.stankey target_ip=10.30.100.202
+
+
+Search against captured user behaviour, see how many times appear in the past
+
+```bash
+tail parsedlog.dat | grep -i "=10.\|=172.16.\|=172.17.\|=172.18.\|=172.19.\|=172.20.\|=172.21.\|=172.22.\|=172.23.\|=172.24.\|=172.25.\|=172.26.\|=172.27.\|=172.28.\|=172.29.\|=172.30.\|=172.31.\|=192.168.\|=127.\|=169.254." | \
+while read -r line; do \
+  keyword1=$(printf "%s" \
+    $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}')); \
+  keyword2=$(printf "target_ip=%s" \
+    $(echo "$line" | awk -F'target_ip=' '{print $2}' | awk -F'|' '{print $1}')); \
+  find useractivity-*.dat -maxdepth 1 -mtime -28 | xargs -P 0 -n 1 grep -i -H "$keyword1" | grep -i "$keyword2"; \
+done | wc -l
+```
+`xargs -P 0 ...` run in multiple processes utilize all processors \
+`parallel -j 0 ...` run in multiple processes utilize all processors
+
 <br />
 <br />
 <br />
