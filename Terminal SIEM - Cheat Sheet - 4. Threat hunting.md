@@ -101,13 +101,13 @@ fi
 <br />
 <br />
 
-## :bookmark:  **Search user behaviour within 4 weeks, it is rare if this appear less than 2**
+## :bookmark:  **Search user behaviour, run command, within 4 weeks, it is rare if this appear less than 2**
 
 Capture user behaviour every minute
 
 ```bash
 tail parsedlog.dat | while read -r line; do \
-  printf "%s %s\n" \
+  printf "%s cmd=%s\n" \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
     $(echo "$line" | awk -F'cmd=' '{print $2}' | awk -F'|' '{print $1}'); \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
@@ -120,11 +120,11 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 :page_facing_up: `useractivity-204507021158.dat`\
 :page_facing_up: `useractivity-204507021159.dat`
 
-> tim.cook bash\
-> sundar.pichai ping\
-> john.stankey zsh\
-> eddie.chu cmd.exe\
-> john.stankey ssh\
+> tim.cook cmd=uname\
+> sundar.pichai cmd=ping.exe\
+> john.stankey cmd=tail\
+> eddie.chu cmd=ADExplorer64.exe\
+> john.stankey cmd=ssh\
 
 Search against captured user behaviour, see how many times appear in the past
 
@@ -132,7 +132,7 @@ Search against captured user behaviour, see how many times appear in the past
 tail parsedlog.dat | while read -r line; do \
   keyword1=$(printf "%s" \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}')); \
-  keyword2=$(printf "%s" \
+  keyword2=$(printf "cmd=%s" \
     $(echo "$line" | awk -F'cmd=' '{print $2}' | awk -F'|' '{print $1}')); \
   find useractivity-*.dat -maxdepth 1 -mtime -28 | xargs -P 0 -n 1 grep -i -H "$keyword1" | grep -i "$keyword2"; \
 done | wc -l
