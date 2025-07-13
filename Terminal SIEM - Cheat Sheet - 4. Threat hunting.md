@@ -233,7 +233,7 @@ Search against captured user behaviour, see total upload size per site and user.
 
 ```bash
 find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
-  awk -F'sent_byte=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 104857600) print user sum[user]}'
+  awk -F'sent_byte=' '{sum[$1] += $2} END {for (unique in sum) if (sum[unique] > 104857600) print unique sum[unique]}'
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
@@ -278,7 +278,7 @@ Search against captured user behaviour, see how long user connect to them, exclu
 ```bash
 find useractivity-*.dat -maxdepth 1 -mtime -1 | xargs -P 0 -n 1 \
   grep -i -v "sharepoint.com\|outlook.com\|gmail.com\|web.whatsapp.com" \
-  awk -F'session_duration=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 43200) print user sum[user]}'
+  awk -F'session_duration=' '{sum[$1] += $2} END {for (unique in sum) if (sum[unique] > 43200) print unique sum[unique]}'
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
