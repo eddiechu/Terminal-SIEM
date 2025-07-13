@@ -238,6 +238,51 @@ find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
+
+---
+<br />
+<br />
+<br />
+
+## :bookmark:  **Search abnormal connection from the user in past 24 hours, if it is more than 12 hours, suspicious command and control (C2) conneciton**
+
+Capture user behaviour every minute
+
+```bash
+tail parsedlog.dat | grep -i -v "user=|" | grep -i -v "target_fqdn=|" | grep -i -v "session_duration=|" | \
+while read -r line; do \
+  printf "%s %s session_duration=%s\n" \
+    $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
+    $(echo "$line" | awk -F'target_fqdn=' '{print $2}' | awk -F'|' '{print $1}') \
+    $(echo "$line" | awk -F'session_duration=' '{print $2}' | awk -F'|' '{print $1}'); \
+done >> useractivity-$(date +%Y%m%d%H%M).dat
+```
+
+:page_facing_up: `useractivity-204507021154.dat`\
+:page_facing_up: `useractivity-204507021155.dat`\
+:page_facing_up: `useractivity-204507021156.dat`\
+:page_facing_up: `useractivity-204507021157.dat`\
+:page_facing_up: `useractivity-204507021158.dat`\
+:page_facing_up: `useractivity-204507021159.dat`
+
+> michael.dell drive.google.com session_duration=7934\
+> sundar.pichai us.yahoo.com session_duration=9739\
+> john.stankey nonstoptogo.io session_duration=57039\
+> eddie.chu www.amazon.com session_duration=248\
+> michael.dell mysharepoint.com session_duration=3734\
+> john.stankey www.cnn.com session_duration=137
+
+
+Search against captured user behaviour, see how long user connect to them, excluding legitimate long connection website.
+
+```bash
+find useractivity-*.dat -maxdepth 1 -mtime -1 | xargs -P 0 -n 1 \
+  grep -i -v "sharepoint.com\|outlook.com\|gmail.com\|web.whatsapp.com" \
+  awk -F'session_duration=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 43200) print user sum[user]}'
+```
+`xargs -P 0 ...` run in multiple processes utilize all processors \
+`parallel -j 0 ...` run in multiple processes utilize all processors
+
 <br />
 <br />
 <br />
