@@ -106,7 +106,8 @@ fi
 Capture user behaviour every minute
 
 ```bash
-tail parsedlog.dat | while read -r line; do \
+tail parsedlog.dat | grep -i -v "user=|" | grep -i -v "cmd=|" | \
+while read -r line; do \
   printf "%s cmd=%s\n" \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
     $(echo "$line" | awk -F'cmd=' '{print $2}' | awk -F'|' '{print $1}'); \
@@ -130,7 +131,8 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 Search against captured user behaviour, see how many times appear in the past
 
 ```bash
-tail parsedlog.dat | while read -r line; do \
+tail parsedlog.dat | grep -i -v "user=|" | grep -i -v "cmd=|" | \
+while read -r line; do \
   keyword1=$(printf "%s" \
     $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}')); \
   keyword2=$(printf "cmd=%s" \
@@ -189,6 +191,8 @@ done | wc -l
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
 `parallel -j 0 ...` run in multiple processes utilize all processors
+
+you can have user, process, target IP and more combination tracking
 
 <br />
 <br />
