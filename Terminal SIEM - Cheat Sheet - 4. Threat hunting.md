@@ -244,7 +244,7 @@ find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
 <br />
 <br />
 
-## :bookmark:  **Search abnormal connection from the user in past 24 hours, if it is more than 12 hours, suspicious command and control (C2) conneciton**
+## :bookmark:  **Search abnormal session from the user in past 24 hours, if it is more than 12 hours, suspicious command and control (C2) conneciton**
 
 Capture user behaviour every minute
 
