@@ -120,11 +120,11 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 :page_facing_up: `useractivity-204507021158.dat`\
 :page_facing_up: `useractivity-204507021159.dat`
 
-> tim.cook bash
-> sundar.pichai ping
-> john.stankey zsh
-> eddie.chu cmd.exe
-> john.stankey ssh 
+> tim.cook bash\
+> sundar.pichai ping\
+> john.stankey zsh\
+> eddie.chu cmd.exe\
+> john.stankey ssh\
 
 Search against captured user behaviour, see how many times appear in the past
 
