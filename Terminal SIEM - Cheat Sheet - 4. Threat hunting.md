@@ -229,7 +229,7 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 > john.stankey www.cnn.com sent_byte=137
 
 
-Search against captured user behaviour, see how many times appear in the past
+Search against captured user behaviour, see total upload size per site and user.
 
 ```bash
 find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
