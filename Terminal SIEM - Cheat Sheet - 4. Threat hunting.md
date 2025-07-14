@@ -85,7 +85,8 @@ find parsedlog*.dat -maxdepth 1 -mmin -30 | \
 >       1 tim.cook 192.168.100.23
 >      3 tim.cook 192.168.100.25
 
-If total unique user login failed great than 50
+If total unique user login failed great than 50 \
+if [ `$(find ... grep ... printf ... sort ... uniq ... wc -l)` -ge 50 ] ; then ... fi
 ```bash
 #!/bin/bash
 
