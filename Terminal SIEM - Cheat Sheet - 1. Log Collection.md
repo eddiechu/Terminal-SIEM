@@ -23,9 +23,6 @@ then restart rsyslog service to take effective
 :page_facing_up: `rsyslog-2025070211.log`
 
 ---
-
-
----
 <br />
 <br />
 <br />
