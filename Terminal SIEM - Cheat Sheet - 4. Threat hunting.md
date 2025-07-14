@@ -168,7 +168,7 @@ while read -r line; do \
     $(echo "$line" | awk -F'target_ip=' '{print $2}' | awk -F'|' '{print $1}'); \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
-
+> Lateral connection means target IP is in private IP range, 10.0.0.0/10, 172.16.0.0/22, 192.168.0.0/16 \
 :page_facing_up: `useractivity-202507021154.dat`\
 :page_facing_up: `useractivity-202507021155.dat`\
 :page_facing_up: `useractivity-202507021156.dat`\
@@ -278,8 +278,8 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 > john.stankey www.cnn.com session_duration=137
 
 
-Search against captured user behaviour, see how long user connect to them, excluding legitimate long connection website, e.g. web.whatsapp.com
-
+Search against captured user behaviour, see how long user connect to them, excluding legitimate long connection website, e.g. web.whatsapp.com \
+`find ...` filter files wihtin specified time frame :arrow_right: `grep -v ...` exclude legitimate website :arrow_right: `awk ... {} END {.. if (sum[user] > 43200) ...} ` find the total of matched "user" and "domain" pair great than 43200 minutes (12 hours)
 ```bash
 find useractivity-*.dat -maxdepth 1 -mtime -1 | xargs -P 0 -n 1 \
   grep -i -v "sharepoint.com\|outlook.com\|gmail.com\|web.whatsapp.com" \
