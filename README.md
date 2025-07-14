@@ -1,11 +1,11 @@
 # **Terminal SIEM**
 > [!CAUTION]
 > **under construction** ...\
-> <br />
-> Help administrator<br />without SIEM, <br />with SIEM but don't have coomplete telemetry for searching (becase of license cost) or <br />with SIEM but have limited search function
+
 
 [![Terminal SIEM](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.gif?raw=true)]([https://linuxserver.aio](https://github.com/eddiechu/Terminal-SIEM/))
 
+> Share with administrator<br />without SIEM, <br />with SIEM but don't have coomplete telemetry for searching (becase of license cost) or <br />with SIEM but have limited search function
 
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
