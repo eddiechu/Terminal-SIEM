@@ -27,7 +27,7 @@ find rsyslog*.log -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02
 find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
-`find ... -newermt` from `\! -newermt` to date time
+`find ... -newermt` from date time `\! -newermt` to date time
 
 OR
 ```bash
@@ -48,6 +48,7 @@ find rsyslog*.log -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
 find parsedlog*.dat -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
+`find ... -mmin` last modified in minutes
 
 OR
 ```bash
@@ -77,6 +78,7 @@ find parsedlog*.dat -maxdepth 1 -mmin -30 | \
   done | \
   sort | uniq -c
 ```
+
 >      1 eddie.chu 192.168.100.172
 >      1 john.stankey 192.168.100.42
 >     27 sundar.pichai 192.168.100.221
