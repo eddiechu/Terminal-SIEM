@@ -1,6 +1,6 @@
 # **Terminal SIEM**
 > [!CAUTION]
-> **under construction** ...\
+> **under construction** ...
 
 
 [![Terminal SIEM](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.gif?raw=true)]([https://linuxserver.aio](https://github.com/eddiechu/Terminal-SIEM/))
