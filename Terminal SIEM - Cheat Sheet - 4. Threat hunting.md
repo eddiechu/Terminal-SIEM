@@ -78,7 +78,7 @@ find parsedlog*.dat -maxdepth 1 -mmin -30 | \
   done | \
   sort | uniq -c
 ```
-`find ...` filter files wihtin specified time frame -> `grep ...` filter specified content -> `grep -v ...` exclude not related IP addresses -> `printf ...` show the matched "user" and "source_ip" -> `sort | uniq -c` group all matched "user" "source_ip" pairs
+`find ...` filter files wihtin specified time frame :arrow_right: `grep ...` filter specified content :arrow_right: `grep -v ...` exclude not related IP addresses :arrow_right: `printf ...` show the matched "user" and "source_ip" -> `sort | uniq -c` group all matched "user" "source_ip" pairs
 >      1 eddie.chu 192.168.100.172
 >      1 john.stankey 192.168.100.42
 >     27 sundar.pichai 192.168.100.221
