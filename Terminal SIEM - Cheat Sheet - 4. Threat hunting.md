@@ -23,15 +23,15 @@ tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type=firewall" | grep -i
 ## :bookmark:  **Search threat patterns within date range**
 
 ```bash
-find rsyslog*.log -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "mimikatz"
-find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
+find rsyslog*.log -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "mimikatz"
+find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
 
 OR
 ```bash
-find rsyslog*.log -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | parallel -j 0 grep -i "mimikatz"
-find parsedlog*.dat -type f -newermt "2045-05-01 00:00:00" \! -newermt "2045-05-02 00:00:00" | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
+find rsyslog*.log -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | parallel -j 0 grep -i "mimikatz"
+find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
@@ -62,13 +62,9 @@ find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_
 
 ## :bookmark:  **Aggragate unique user login failed in last 30 minutes, alert if over 50**
 
-filter log with log_type=windows, log_eventid=4771 and consists "authentication failed"
-exclude certain source IP, e.g. =192.168.100.2, =192.168.100.3
+Filter log with "log_type=windows", "log_eventid=4771" and consists "authentication failed"
+Exclude certain source IP, e.g. "=192.168.100.2", "=192.168.100.3"
 
-```bash
-find parsedlog*.dat -maxdepth 1 -mmin -30 | grep -i "log_type=windows" | grep -i "log_eventid=4771" | grep -i "authentication failed" | grep -i -v "source_ip=192.168.100.2\|source_ip=192.168.100.3" | while read -r line; do printf "%s %s\n" $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}'); done | sort | uniq -c
-```
-OR
 ```bash
 find parsedlog*.dat -maxdepth 1 -mmin -30 | \
   grep -i "log_type=windows" | \
@@ -90,7 +86,14 @@ If total unique user login failed great than 50
 ```bash
 #!/bin/bash
 
-if [[ $(find parsedlog*.dat -maxdepth 1 -mmin -30 | grep -i "log_type=windows" | grep -i "log_eventid=4771" | grep -i "authentication failed" | grep -i -v "source_ip=192.168.100.2\|source_ip=192.168.100.3" | while read -r line; do printf "%s %s\n" $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}'); done | sort | uniq | wc -l) -ge 50 ]];
+if [[ $(find parsedlog*.dat -maxdepth 1 -mmin -30 | \
+  grep -i "log_type=windows" | grep -i "log_eventid=4771" | grep -i "authentication failed" | grep -i -v "source_ip=192.168.100.2\|source_ip=192.168.100.3" | \
+  while read -r line; \
+    do printf "%s %s\n" \
+      $(echo "$line" | awk -F'user=' '{print $2}' | awk -F'|' '{print $1}') \
+      $(echo "$line" | awk -F'source_ip=' '{print $2}' | awk -F'|' '{print $1}'); \
+  done | \
+  sort | uniq | wc -l) -ge 50 ]];
 then
   alert.sh "Warning! Total user login failed great than 50"
 fi
@@ -114,12 +117,12 @@ while read -r line; do \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
 
-:page_facing_up: `useractivity-204507021154.dat`\
-:page_facing_up: `useractivity-204507021155.dat`\
-:page_facing_up: `useractivity-204507021156.dat`\
-:page_facing_up: `useractivity-204507021157.dat`\
-:page_facing_up: `useractivity-204507021158.dat`\
-:page_facing_up: `useractivity-204507021159.dat`
+:page_facing_up: `useractivity-202507021154.dat`\
+:page_facing_up: `useractivity-202507021155.dat`\
+:page_facing_up: `useractivity-202507021156.dat`\
+:page_facing_up: `useractivity-202507021157.dat`\
+:page_facing_up: `useractivity-202507021158.dat`\
+:page_facing_up: `useractivity-202507021159.dat`
 
 > michael.dell cmd=outlook.exe\
 > sundar.pichai cmd=ping.exe\
@@ -162,12 +165,12 @@ while read -r line; do \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
 
-:page_facing_up: `useractivity-204507021154.dat`\
-:page_facing_up: `useractivity-204507021155.dat`\
-:page_facing_up: `useractivity-204507021156.dat`\
-:page_facing_up: `useractivity-204507021157.dat`\
-:page_facing_up: `useractivity-204507021158.dat`\
-:page_facing_up: `useractivity-204507021159.dat`
+:page_facing_up: `useractivity-202507021154.dat`\
+:page_facing_up: `useractivity-202507021155.dat`\
+:page_facing_up: `useractivity-202507021156.dat`\
+:page_facing_up: `useractivity-202507021157.dat`\
+:page_facing_up: `useractivity-202507021158.dat`\
+:page_facing_up: `useractivity-202507021159.dat`
 
 > michael.dell target_ip=10.20.100.23\
 > sundar.pichai target_ip=10.20.100.77\
@@ -214,12 +217,12 @@ while read -r line; do \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
 
-:page_facing_up: `useractivity-204507021154.dat`\
-:page_facing_up: `useractivity-204507021155.dat`\
-:page_facing_up: `useractivity-204507021156.dat`\
-:page_facing_up: `useractivity-204507021157.dat`\
-:page_facing_up: `useractivity-204507021158.dat`\
-:page_facing_up: `useractivity-204507021159.dat`
+:page_facing_up: `useractivity-202507021154.dat`\
+:page_facing_up: `useractivity-202507021155.dat`\
+:page_facing_up: `useractivity-202507021156.dat`\
+:page_facing_up: `useractivity-202507021157.dat`\
+:page_facing_up: `useractivity-202507021158.dat`\
+:page_facing_up: `useractivity-202507021159.dat`
 
 > michael.dell drive.google.com sent_byte=739347\
 > sundar.pichai us.yahoo.com sent_byte=98739\
@@ -258,12 +261,12 @@ while read -r line; do \
 done >> useractivity-$(date +%Y%m%d%H%M).dat
 ```
 
-:page_facing_up: `useractivity-204507021154.dat`\
-:page_facing_up: `useractivity-204507021155.dat`\
-:page_facing_up: `useractivity-204507021156.dat`\
-:page_facing_up: `useractivity-204507021157.dat`\
-:page_facing_up: `useractivity-204507021158.dat`\
-:page_facing_up: `useractivity-204507021159.dat`
+:page_facing_up: `useractivity-202507021154.dat`\
+:page_facing_up: `useractivity-202507021155.dat`\
+:page_facing_up: `useractivity-202507021156.dat`\
+:page_facing_up: `useractivity-202507021157.dat`\
+:page_facing_up: `useractivity-202507021158.dat`\
+:page_facing_up: `useractivity-202507021159.dat`
 
 > michael.dell drive.google.com session_duration=7934\
 > sundar.pichai us.yahoo.com session_duration=9739\
