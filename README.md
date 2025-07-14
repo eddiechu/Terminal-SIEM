@@ -30,7 +30,7 @@ Patch / security management | **Linux** | Linux and product
 Store raw log | **Yes, raw log and parsed log** | No
 Retention | **File management** | Index management
 Immutable | **Support with chattr and hash** | Yes
-Skill set required | **Linux rsyslog, grep, awk, file management, etc (*may need Golang for advanced parsing, Python for advanced searching*)** | Product knowledge
+Skill set required | **Linux rsyslog, grep, awk, file management, etc (*may need Golang for complex parsing, Python for complex searching*)** | Product knowledge
 
 <br />
 <br />
