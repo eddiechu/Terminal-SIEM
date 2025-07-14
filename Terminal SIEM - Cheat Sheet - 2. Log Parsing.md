@@ -71,7 +71,12 @@ This way, you can run it by schedule, keep tracking last check position, avoid o
 > another way to have multiple processing, Linux GNU parallel
 
 ```bash
-for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; do pos=$(cat ${f}.lastpos); lastpos=$(stat -c %s ${f}); echo $lastpos > ${f}.lastpos; tail -c +$pos ${f} | parallel -j 0 --pipe parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat'; done
+for f in `find \var\log\rsyslog\rsyslog*.log -mmin -3`; \
+do pos=$(cat ${f}.lastpos); \
+  lastpos=$(stat -c %s ${f}); \
+  echo $lastpos > ${f}.lastpos; \
+  tail -c +$pos ${f} | parallel -j 0 --pipe parse.sh >> parsedlog-$(date +%Y%m%d%H%M).dat'; \
+done
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
