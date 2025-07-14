@@ -47,7 +47,7 @@ find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-
 find rsyslog*.log -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
 find parsedlog*.dat -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
 ```
-`xargs -P 0 ...` run in multiple processes utilize all processors
+`xargs -P 0 ...` run in multiple processes utilize all processors \
 `find ... -mmin` last modified in minutes
 
 OR
@@ -78,7 +78,7 @@ find parsedlog*.dat -maxdepth 1 -mmin -30 | \
   done | \
   sort | uniq -c
 ```
-
+`find ...` filter files wihtin specified time frame -> `grep ...` filter specified content -> `grep -v ...` exclude not related IP addresses -> `printf ...` show the matched "user" and "source_ip" -> `sort | uniq -c` group all matched "user" "source_ip" pairs
 >      1 eddie.chu 192.168.100.172
 >      1 john.stankey 192.168.100.42
 >     27 sundar.pichai 192.168.100.221
