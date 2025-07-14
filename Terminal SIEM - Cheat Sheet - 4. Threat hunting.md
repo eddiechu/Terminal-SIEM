@@ -135,7 +135,8 @@ done >> useractivity-$(date +%Y%m%d%H%M).dat
 > john.stankey cmd=excel.exe
 
 
-Search against captured user behaviour, see how many times appear in the past
+Search against captured user behaviour, see how many times appear in the past \
+`awk ...` extract "user" and "cmd" pair from current log entry, then `find ... -mtime -28` ... `grep ... wc -l` filter out how many matches from 28 days records
 
 ```bash
 tail parsedlog.dat | grep -i -v "user=|" | grep -i -v "cmd=|" | \
