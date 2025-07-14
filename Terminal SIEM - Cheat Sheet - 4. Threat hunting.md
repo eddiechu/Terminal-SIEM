@@ -43,15 +43,15 @@ find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-
 ## :bookmark:  **Search threat patterns in last 30 minutes**
 
 ```bash
-find rsyslog*.log -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
-find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
+find rsyslog*.log -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
+find parsedlog*.dat -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors
 
 OR
 ```bash
-find rsyslog*.log -type f -maxdepth 1 -mmin -30 | parallel -j 0 grep -i "mimikatz"
-find parsedlog*.dat -type f -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
+find rsyslog*.log -maxdepth 1 -mmin -30 | parallel -j 0 grep -i "mimikatz"
+find parsedlog*.dat -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"'
 ```
 `parallel -j 0 ...` run in multiple processes utilize all processors
 
