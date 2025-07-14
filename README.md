@@ -15,13 +15,13 @@ Technology | **Linux terminal, file based** | Web based, index and NoSQL
 Production architecture | **Single host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
 Log injection | **Hundreds thousand log entries / sec** | Thousands log entries / sec, need message queue to support more volume to minimize log loss burst
-Multiprocessing | **Yes, with Linux GNU parallel or xarg** | Depends
+Multiprocessing | **Yes, with Linux GNU parallel or xargs** | Depends
 Correlation | **Yes** | Yes
-Log parsing | **by awk, jq or Golang, build from scratch, with the help of Gen AI<br/>(*Can avoid regular experssion for hundreds times performance gain*)** | built-in parser for common log source
-Threat detection | **by grep or awk, build from scratch, convert from community rules with the help of Gen AI** | Primitive, need to build most
-Flexibility | **Can develop search criteria what ever you think, and with the help of Gen AI, <br/>e.g. <ul><li>any source IP to a destinated IP access more than 20 different ports</li><li>any user login O365 cross more than one countries within an hour</li><li>over 80 unique user login failed over an hour</li><li>what happen on that laptop and firewall in 3 minutes before the incident</li><li>any user to a single web site, accumulated upload size more than 100MB within a day</li><li>accumulate web access time per host per desgination within a day to spot potential C2</li></ul>** | Limit to the product capability
+Log parsing | **by awk or Golang, build from scratch<br/>(*Can avoid regular experssion for hundreds times performance gain*)** | built-in parser for common log source
+Threat detection | **by grep or awk, build from scratch, or convert from community rules with the help of Gen AI** | Primitive, need to further building
+Flexibility | **Can develop search criteria what ever you think** | Limit to the product capability
 High availability | **Load balancers, nodes and share storage** | Can extend to HA
-Scalability | **Vertical or horizontal** | Horizontal
+Scalability | **Vertical** | Horizontal
 Dashboard and report | **No** | Yes
 Access control | **Linux** | Product feature
 Patch / security management | **Linux** | Linux and product
