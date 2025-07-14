@@ -143,7 +143,7 @@ while read -r line; do \
   find useractivity-*.dat -maxdepth 1 -mtime -28 | xargs -P 0 -n 1 grep -i -H "$keyword1" | grep -i "$keyword2"; \
 done | wc -l
 ```
-`xargs -P 0 ...` run in multiple processes utilize all processors \
+`xargs -P 0 ...` run in multiple processes utilize all processors
 
 ---
 <br />
@@ -191,7 +191,7 @@ while read -r line; do \
   find useractivity-*.dat -maxdepth 1 -mtime -28 | xargs -P 0 -n 1 grep -i -H "$keyword1" | grep -i "$keyword2"; \
 done | wc -l
 ```
-`xargs -P 0 ...` run in multiple processes utilize all processors \
+`xargs -P 0 ...` run in multiple processes utilize all processors
 
 You can have user, process, target IP and more combination tracking
 
@@ -236,7 +236,7 @@ Search against captured user behaviour, see total upload size per site and user.
 find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
   awk -F'sent_byte=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 104857600) print user sum[user]}'
 ```
-`xargs -P 0 ...` run in multiple processes utilize all processors \
+`xargs -P 0 ...` run in multiple processes utilize all processors
 
 
 ---
@@ -280,7 +280,7 @@ find useractivity-*.dat -maxdepth 1 -mtime -1 | xargs -P 0 -n 1 \
   grep -i -v "sharepoint.com\|outlook.com\|gmail.com\|web.whatsapp.com" \
   awk -F'session_duration=' '{sum[$1] += $2} END {for (user in sum) if (sum[user] > 43200) print user sum[user]}'
 ```
-`xargs -P 0 ...` run in multiple processes utilize all processors \
+`xargs -P 0 ...` run in multiple processes utilize all processors
 
 <br />
 <br />
