@@ -22,7 +22,7 @@ Scalability | **Vertical** | Horizontal
 Log injection | **Hundreds thousand log entries / sec** | Thousands log entries / sec, need message queue to support more volume to minimize log loss burst
 Correlation | **Yes** | Yes
 Log parsing | **by awk or Golang, build from scratch<br/>(*Can avoid regular experssion for hundreds times performance gain*)** | built-in parser for common log source
-Threat detection | **by grep, awk or Python dataframe, build from scratch, or convert from community rules with the help of Gen AI** | Primitive, need to further build
+Threat detection | **by grep, awk or Python dataframe, build from scratch, or convert from community rules, Sigma rules, with the help of Gen AI** | Primitive, need to further build
 Flexibility | **Can develop search criteria what ever you think** | Limit to the product capability
 Dashboard and report | **No** | Yes
 Access control | **Linux** | Product feature
@@ -54,9 +54,11 @@ siem
 Security information and event management
 blue team
 soc
+soc analyst
 red team
 opensearch
 elasticsearch
+elk
 search
 index
 security
@@ -67,3 +69,8 @@ collection
 parsing
 threat detection
 threat hunting
+log server
+Sigma rules
+splunk
+qradar
+sentinel
