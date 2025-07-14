@@ -26,7 +26,8 @@ tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type=firewall" | grep -i
 find rsyslog*.log -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "mimikatz"
 find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "log_type=firewall" | grep -i "source_ip=192.168.21.37"
 ```
-`xargs -P 0 ...` run in multiple processes utilize all processors
+`xargs -P 0 ...` run in multiple processes utilize all processors \
+`find ... -newermt` from `\! -newermt` to date time
 
 OR
 ```bash
