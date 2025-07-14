@@ -5,7 +5,7 @@
 > Help administrator<br />without SIEM, <br />with SIEM but don't have coomplete telemetry for searching (becase of license cost) or <br />with SIEM but have limited search function
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.apng)](https://linuxserver.aio)
-[![hello](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=Blog)](https://blog.linuxserver.io "all the things you can do with our containers including How-To guides, opinions and much more!")
+[![hello](https://img.shields.io/static/v1.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=linuxserver.io&message=Bloga)](https://blog.linuxserver.io "all the things you can do with our containers including How-To guides, opinions and much more!")
 
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
