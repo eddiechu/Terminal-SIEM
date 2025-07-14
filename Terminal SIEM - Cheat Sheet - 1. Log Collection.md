@@ -29,7 +29,7 @@ then restart rsyslog service to take effective
 
 ## :bookmark:  **Pull log from SaaS, then inject to syslog**
 
-Pull log from SaaS, convert json format to one line then inject to syslog
+Pull log from SaaS, convert each log entry from json format to one line then inject to syslog
 ```
 curl -X "GET" -H "accept: application/json" -H "Rest-Api-Token: abcdefghijklmnopqrstuvwxyz0123456789" "https://mysaas.com/api/events" | \
   jq --raw-output '.result[] | del(.custom_attr) | to_entries | map(.key + "=" + (.value|tostring)) | join(",") | \
