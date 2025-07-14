@@ -144,7 +144,6 @@ while read -r line; do \
 done | wc -l
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
-`parallel -j 0 ...` run in multiple processes utilize all processors
 
 ---
 <br />
@@ -193,9 +192,8 @@ while read -r line; do \
 done | wc -l
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
-`parallel -j 0 ...` run in multiple processes utilize all processors
 
-you can have user, process, target IP and more combination tracking
+You can have user, process, target IP and more combination tracking
 
 
 ---
@@ -239,7 +237,6 @@ find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
   awk -F'sent_byte=' '{sum[$1] += $2} END {for (unique in sum) if (sum[unique] > 104857600) print unique sum[unique]}'
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
-`parallel -j 0 ...` run in multiple processes utilize all processors
 
 
 ---
@@ -284,50 +281,10 @@ find useractivity-*.dat -maxdepth 1 -mtime -1 | xargs -P 0 -n 1 \
   awk -F'session_duration=' '{sum[$1] += $2} END {for (unique in sum) if (sum[unique] > 43200) print unique sum[unique]}'
 ```
 `xargs -P 0 ...` run in multiple processes utilize all processors \
-`parallel -j 0 ...` run in multiple processes utilize all processors
 
 <br />
 <br />
 <br />
 
 <!-- 
-event id 4771
-Account Name:	
-IpAddress
-Keywords: Audit Failure
-Client Address
-Kerberos pre-authentication failed.
-
-
-
-CommandLine "C:\Users\user1\Desktop\SysinternalsSuite\ADExplorer64.exe"  
- User LAB\user1 
- Process Create:
-Process Create (rule: ProcessCreate)
-
-
- 
-Process Create:
-QueryName: elasticpoint.net
-task category Dns query (rule: DnsQuery)
-
-
-
-Network connection detected:
-DestinationIp: 192.168.157.131
-DestinationHostname: -
-DestinationPort: 3389
-Image: C:\Windows\System32\mstsc.exe
-User: LAB\user1
-SourceIp: 192.168.157.130
-
-Source: Sysmon
-
-https://www.gnu.org/software/parallel/parallel_examples.html#example-parallel-grep
-
-grep -i "log_type=windows" | grep -i "sysmon" | grep -i "process create" 
-grep -i "log_type=windows" | grep -i "sysmon" | grep -i "network connection" 
-
-=10.|=172.16.|=172.17.|=172.18.|=172.19.|=172.20.|=172.21.|=172.22.|=172.23.|=172.24.|=172.25.|=172.26.|=172.27.|=172.28.|=172.29.|=172.30.|=172.31.|=192.168.|=127.|=169.254.
-
 -->
