@@ -2,7 +2,7 @@
 > [!CAUTION]
 > **under construction** ...
 
-[![Terminal SIEM](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.gif?raw=true)(https://github.com/eddiechu/Terminal-SIEM/))
+[![Terminal SIEM](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.gif?raw=true)
 
 Share with administrator<br />
 - without SIEM <br />
