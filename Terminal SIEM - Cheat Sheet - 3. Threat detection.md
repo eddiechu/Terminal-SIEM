@@ -1,6 +1,9 @@
 # **Terminal SIEM - Cheat Sheet - Threat detection**
 
-## :bookmark:  **Search threat patterns in batch from parsed log**
+## :bookmark:  **Search for threat patterns in batches from parsed log**
+
+Utilize the parsed logs to identify potential threat patterns
+
 :page_facing_up: `detection.sh`
 ```bash
 #!/bin/bash
@@ -31,7 +34,7 @@ tail parsedlog.dat | parallel -j 0 --pipe detection.sh'
 <br />
 <br />
 
-## :bookmark:  **Search against cyber threat intelligence feed**
+## :bookmark:  **Search against cyber threat intelligence feeds**
 Indicators of compromise (IoCs), such as malicious URLs, IP addresses, and file hashes
 
 :page_facing_up: `detection.sh`
