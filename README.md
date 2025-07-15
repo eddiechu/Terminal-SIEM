@@ -37,7 +37,7 @@ Skill set required | **Linux rsyslog, grep, awk, file management, etc (*may need
 <br />
 
 ## **Design**
-![Terminal SIEM! Super light, super fast, unlimited search idea](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.drawio.svg?raw=true)
+![Terminal SIEM! Super light, super fast, unlimited search idea](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1diagram.svg?raw=true)
 
 <br />
 <br />
