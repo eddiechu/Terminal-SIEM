@@ -4,7 +4,7 @@
 
 ![Terminal SIEM! Super light, super fast, unlimited search idea](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.gif?raw=true)
 
-Share with administrator<br />
+Share with security administrator<br />
 - without SIEM <br />
 - with SIEM but don't have coomplete telemetry for searching (becase of license cost) <br />
 - with SIEM but have limited search function
