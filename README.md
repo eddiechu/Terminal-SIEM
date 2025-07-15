@@ -12,24 +12,24 @@ Share with administrator<br />
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | --- 
-Strength | **<ins>Super light</ins> - due to no indexing, database and GUI<br /><ins>Super fast</ins> - with parallel processing and minimal regular expression usage<br /><ins>Unlimited search idea</ins> - what ever your need** | GUI
+Strength | **<ins>Super light</ins> - due to no indexing, database and GUI<br /><ins>Super fast</ins> - with parallel processing and minimal regular expression usage<br /><ins>Unlimited search idea</ins> - what ever your need** | Feature-rich GUI
 Technology | **Linux terminal, file-based** | Web-based, indexed NoSQL
 Multiprocessing | **Yes - Linux GNU parallel or xargs** | Depends on product
 Production architecture | **Single host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
-High availability | **Load balancers, nodes and share storage** | Can extend to HA
-Scalability | **Vertical** | Horizontal
-Log injection | **Hundreds of thousands of log entries / sec** | Thousands of log entries / sec (requires message queue for higher volumes to minimize burst log loss)
-Correlation | **Yes** | Yes
+High availability | **Supported via load balancers, nodes and share storage** | Extensible to HA
+Scalability | **Vertical scaling** | Horizontal scaling
+Log injection | **Hundreds of thousands of log entries / sec** | Thousands of log entries / sec (requires message queue for higher volumes to minimize log loss during bursts)
+Correlation | **Supported** | Supported
 Log parsing | **awk or Golang, built from scratch<br/>(*Can avoid regular experssion for hundreds of times performance gain*)** | Built-in parsers for common log sources
-Threat detection | **grep, awk or Python dataframe, built from scratch, can convert community rules, e.g. Sigma rules, with Gen AI assistance** | Primitive capabilities, requires additonal setup
+Threat detection | **Custom-built using grep, awk or Python dataframe, support conversion of community rules, e.g. Sigma rules, with Gen AI assistance** | Primitive detection, requires further customization
 Flexibility | **Develop any search criteria your need** | Limit to the product capabilities
 Dashboard and report | **No** | Yes
-Access control | **Linux-based** | Product feature
-Patch / security management | **Linux** | Linux and product
+Access control | **Managed via Linux permissions** | Product feature
+Patch / security management | **Linux update** | Linux and product update
 Store raw log | **Yes - stores both raw and parsed log** | No
 Retention | **File management** | Index management
-Immutable | **Supported with chattr and hash** | Yes
+Immutable | **Supported with chattr and hash** | Product feature
 Skill set required | **Linux rsyslog, grep, awk, file management (*may need Golang for complex parsing, Python for complex searching*)** | Product-specific knowledge
 
 <br />
