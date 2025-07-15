@@ -1,6 +1,6 @@
 # **Terminal SIEM - Cheat Sheet - Threat hunting**
 
-## :bookmark:  **Search threat patterns form the syslog or parsed log**
+## :bookmark:  **Search for threat patterns within the syslog or parsed log**
 
 ```bash
 tail rsyslog.log | xargs -P 0 -I {} sh -c 'echo "{}" | grep -i "mimikatz"'
@@ -20,7 +20,7 @@ tail parsedlog.dat | parallel -j 0 --pipe 'grep -i "log_type=firewall" | grep -i
 <br />
 <br />
 
-## :bookmark:  **Search threat patterns within date range**
+## :bookmark:  **Search for threat patterns within a specified date range**
 
 ```bash
 find rsyslog*.log -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-02 00:00:00" | xargs -P 0 -n 1 grep -i "mimikatz"
@@ -41,7 +41,7 @@ find parsedlog*.dat -type f -newermt "2025-05-01 00:00:00" \! -newermt "2025-05-
 <br />
 <br />
 
-## :bookmark:  **Search threat patterns in last 30 minutes**
+## :bookmark:  **Search for threat patterns in the last 30 minutes**
 
 ```bash
 find rsyslog*.log -maxdepth 1 -mmin -30 | xargs -P 0 -n 1 grep -i "mimikatz"
@@ -62,7 +62,7 @@ find parsedlog*.dat -maxdepth 1 -mmin -30 | parallel -j 0 'grep -i "log_type=fir
 <br />
 <br />
 
-## :bookmark:  **Aggragate unique user login failed in last 30 minutes, alert if over 50**
+## :bookmark:  **Aggragate unique user login failure in the last 30 minutes, and alert if the count exceeds 50**
 
 Filter log with "log_type=windows", "log_eventid=4771" and consists "authentication failed"
 Exclude certain source IP, e.g. "=192.168.100.2", "=192.168.100.3"
@@ -108,7 +108,7 @@ fi
 <br />
 <br />
 
-## :bookmark:  **Search rare run command from the user within 4 weeks, if this appear less than 2**
+## :bookmark:  **Search for rare command executions by users in the past 4 weeks, the occurrence is fewer than 2**
 
 Capture user behaviour every minute
 
@@ -155,7 +155,7 @@ done | wc -l
 <br />
 <br />
 
-## :bookmark:  **Search rare lateral connection from the user within 4 weeks, if this appear less than 2**
+## :bookmark:  **Search for rare lateral connections made by users in the past 4 weeks, the occurrence is fewer than 2**
 
 Capture user behaviour every minute
 
@@ -206,7 +206,7 @@ You can have user, process, target IP and more combination tracking
 <br />
 <br />
 
-## :bookmark:  **Search abnormal upload from the user in past 24 hours, if it is more than 100MB**
+## :bookmark:  **Search for abnormal uploads by users in the past 24 hours, alerting if the upload exceeds 100 MB**
 
 Capture user behaviour every minute
 
@@ -249,7 +249,7 @@ find useractivity-*.dat -maxdepth 1 -mtime -1 -print0 | xargs -P 0 -0 \
 <br />
 <br />
 
-## :bookmark:  **Search abnormal session from the user in past 24 hours, if it is more than 12 hours, suspicious command and control (C2) conneciton**
+## :bookmark:  **Search for abnormal sessions in the past 24 hours, flagging sessions lasting more than 12 hours, particularly for suspicious command and control (C2) connections**
 
 Capture user behaviour every minute
 
