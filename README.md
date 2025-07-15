@@ -12,25 +12,25 @@ Share with administrator<br />
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | --- 
-Strength | **<ins>Super light</ins>, because of no indexing, database and GUI<br /><ins>Super fast</ins>, parallel processing and minimal the use of regular expression<br /><ins>Unlimited search idea</ins>, what ever your want** | GUI
-Technology | **Linux terminal, file based** | Web based, index and NoSQL
-Multiprocessing | **Yes, with Linux GNU parallel or xargs** | Depends
+Strength | **<ins>Super light</ins> - no indexing, database and GUI<br /><ins>Super fast</ins> - parallel processing and minimal regular expression usage<br /><ins>Unlimited search idea</ins> - what ever your need** | GUI
+Technology | **Linux terminal, file-based** | Web-based, indexed NoSQL
+Multiprocessing | **Yes - Linux GNU parallel or xargs** | Depends on product
 Production architecture | **Single host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
 High availability | **Load balancers, nodes and share storage** | Can extend to HA
 Scalability | **Vertical** | Horizontal
-Log injection | **Hundreds thousand log entries / sec** | Thousands log entries / sec, need message queue to support more volume to minimize log loss burst
+Log injection | **Hundreds thousand of log entries / sec** | Thousands of log entries / sec (requires message queue for higher volumes to minimize burst log loss)
 Correlation | **Yes** | Yes
-Log parsing | **by awk or Golang, build from scratch<br/>(*Can avoid regular experssion for hundreds times performance gain*)** | built-in parser for common log source
-Threat detection | **by grep, awk or Python dataframe, build from scratch, or convert from community rules, Sigma rules, with the help of Gen AI** | Primitive, need to further build
-Flexibility | **Can develop search criteria what ever you think** | Limit to the product capability
+Log parsing | **awk or Golang, built from scratch<br/>(*Can avoid regular experssion for hundreds of times performance gain*)** | Built-in parsers for common log sources
+Threat detection | **grep, awk or Python dataframe, built from scratch, can convert community rules, e.g. Sigma rules, with Gen AI assistance** | Primitive capabilities, requires additonal setup
+Flexibility | **Develop any search criteria your need** | Limit to the product capabilities
 Dashboard and report | **No** | Yes
-Access control | **Linux** | Product feature
+Access control | **Linux-based** | Product feature
 Patch / security management | **Linux** | Linux and product
-Store raw log | **Yes, raw log and parsed log** | No
+Store raw log | **Yes - stores both raw and parsed log** | No
 Retention | **File management** | Index management
-Immutable | **Support with chattr and hash** | Yes
-Skill set required | **Linux rsyslog, grep, awk, file management, etc (*may need Golang for complex parsing, Python for complex searching*)** | Product knowledge
+Immutable | **Supported with chattr and hash** | Yes
+Skill set required | **Linux rsyslog, grep, awk, file management (*may need Golang for complex parsing, Python for complex searching*)** | Product-specific knowledge
 
 <br />
 <br />
@@ -44,7 +44,7 @@ Skill set required | **Linux rsyslog, grep, awk, file management, etc (*may need
 <br />
 
 ## **Cheat Sheet**
-Start from here, then go to more adaptable and advanced with the help of your Gen AI buddies
+Begin with these foundational resources, then advance to more sophisticated implementations with assistance from Gen AI tools:
 
 Cheat Sheet - [Log Collection](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%201.%20Log%20Collection.md)
 
