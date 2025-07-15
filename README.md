@@ -12,14 +12,14 @@ Share with administrator<br />
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | --- 
-Strength | **<ins>Super light</ins> - no indexing, database and GUI<br /><ins>Super fast</ins> - parallel processing and minimal regular expression usage<br /><ins>Unlimited search idea</ins> - what ever your need** | GUI
+Strength | **<ins>Super light</ins> - due to no indexing, database and GUI<br /><ins>Super fast</ins> - with parallel processing and minimal regular expression usage<br /><ins>Unlimited search idea</ins> - what ever your need** | GUI
 Technology | **Linux terminal, file-based** | Web-based, indexed NoSQL
 Multiprocessing | **Yes - Linux GNU parallel or xargs** | Depends on product
 Production architecture | **Single host** | Several hosts per role
 Sizing | **xlarge** | 4xlarge per host
 High availability | **Load balancers, nodes and share storage** | Can extend to HA
 Scalability | **Vertical** | Horizontal
-Log injection | **Hundreds thousand of log entries / sec** | Thousands of log entries / sec (requires message queue for higher volumes to minimize burst log loss)
+Log injection | **Hundreds of thousands of log entries / sec** | Thousands of log entries / sec (requires message queue for higher volumes to minimize burst log loss)
 Correlation | **Yes** | Yes
 Log parsing | **awk or Golang, built from scratch<br/>(*Can avoid regular experssion for hundreds of times performance gain*)** | Built-in parsers for common log sources
 Threat detection | **grep, awk or Python dataframe, built from scratch, can convert community rules, e.g. Sigma rules, with Gen AI assistance** | Primitive capabilities, requires additonal setup
