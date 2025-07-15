@@ -43,8 +43,17 @@ Skill set required | **Linux rsyslog, grep, awk, file management (*may need Gola
 <br />
 <br />
 
-## **Design**
+## **Architecture**
 ![Terminal SIEM! Super light, super fast, unlimited search idea](https://eddiechu.github.io/terminalsiem2.svg)
+
+1. Configure rsyslog: Set up rsyslog on Linux to consolidate all syslog sources into a single file, using a timestamp-based filename (e.g., rsyslog-2025070211.log) that rotates every hour.
+2. Parse Syslog Files: Use a script to crawl the consolidated syslog file and parse it into a standard schema using a "|" delimiter, saving the output to a new file with a timestamp-based filename (e.g., parsedlog-202507021154.dat) that updates every minute.
+3. Capture User Behavior: Utilize Linux sort and uniq commands to capture user behavior every minute, saving the output to a file with a timestamp-based filename (e.g., user-activity-202507021154.dat).
+4. Threat Pattern Detection: Leverage Linux commands like awk and grep to search for threat patterns in the parsed log files.
+5. Cyber Threat Intelligence Integration: Search the parsed logs against cyber threat intelligence feeds, Indicators of Compromise (IoCs), such as malicious URLs, IP addresses, and file hashes.
+6. Abnormal User Behavior Detection: Detect abnormal user behavior by searching against user activity profile files.
+7. Automation: Automate all these jobs using cron to run every minute, ensuring continuous monitoring and threat detection.
+8. Custom Maintenance Scripts: Develop custom maintenance scripts to perform additional tasks and schedule them to run using cron jobs, allowing for flexibility and extensibility in your setup.
 
 <br />
 <br />
