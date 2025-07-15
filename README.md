@@ -36,6 +36,13 @@ Skill set required | **Linux rsyslog, grep, awk, file management, etc (*may need
 <br />
 <br />
 
+## **Design**
+![Terminal SIEM! Super light, super fast, unlimited search idea](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.drawio.svg?raw=true)
+
+<br />
+<br />
+<br />
+
 ## **Cheat Sheet**
 Start from here, then go to more adaptable and advanced with the help of your Gen AI buddies
 
