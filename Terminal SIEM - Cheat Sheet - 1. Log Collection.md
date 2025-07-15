@@ -1,8 +1,8 @@
 # **Terminal SIEM - Cheat Sheet - Log Collection**
 
-## :bookmark:  **Consolidate all syslog sources to a single file, use timestamp as file name**
+## :bookmark:  **Consolidate all syslog sources to a single file, using timestamp as file name**
 
-In the /etc/rsyslog.conf, configure to use TCP (minimize log loss) and timestamp as file name, e.g. rsyslog-202507020420.log
+In the /etc/rsyslog.conf file, configure to use TCP to minimize log loss, and set the timestamp as file name, e.g. rsyslog-202507020420.log
 
 ```
 module(load="imtcp")
@@ -13,7 +13,7 @@ $template CustomTemplate, "/var/rsyslog/rsyslog-%$YEAR%%$MONTH%%$DAY%%$HOUR%.log
 
 $ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
 ```
-then restart rsyslog service to take effective
+Then, restart the rsyslog service to apply the changes
 
 :page_facing_up: `rsyslog-2025070206.log`\
 :page_facing_up: `rsyslog-2025070207.log`\
@@ -27,9 +27,10 @@ then restart rsyslog service to take effective
 <br />
 <br />
 
-## :bookmark:  **Pull log from SaaS, then inject to syslog**
+## :bookmark:  **Pull log from SaaS and inject them into syslog**
 
-Pull log from SaaS, convert each log entry from json format to one line then inject to syslog
+Retrieve logs from the SaaS platform, convert each log entry from JSON format to a single line, and then inject them into syslog
+
 ```
 curl -X "GET" -H "accept: application/json" -H "Rest-Api-Token: abcdefghijklmnopqrstuvwxyz0123456789" "https://mysaas.com/api/events" | \
   jq --raw-output '.result[] | del(.custom_attr) | to_entries | map(.key + "=" + (.value|tostring)) | join(",") | \
