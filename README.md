@@ -66,6 +66,14 @@ Cheat Sheet - [Threat detection](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%203.%20
 
 Cheat Sheet - [Threat hunting](Terminal%20SIEM%20-%20Cheat%20Sheet%20-%204.%20Threat%20hunting.md)
 
+<br />
+<br />
+<br />
+Feel free to share search idea, I’ll keep this updated!
+<br />
+<br />
+<br />
+
 
 #
 #tag
