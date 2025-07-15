@@ -12,6 +12,10 @@ Terminal SIEM addresses three critical gaps in the security monitoring landscape
 - Organizations with incomplete SIEM coverage - Offers unlimited log processing without licensing restrictions<br />
 - Organizations with limited SIEM functionality - Delivers flexible search capabilities beyond product constraints<br />
 
+<br />
+<br />
+<br />
+
 ## **Characteristics**
 Attribute | Termina SIEM | Community \/ Brand SIEM
 --- | --- | --- 
