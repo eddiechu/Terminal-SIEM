@@ -1,7 +1,7 @@
 ![Terminal SIEM! Super light, super fast, unlimited search idea](https://github.com/eddiechu/Terminal-SIEM/blob/main/image/terminalsiem1.gif?raw=true)
 
 ## **Terminal SIEM**
-Terminal SIEM is a lightweight, command-line-based security monitoring solution that leverages Linux's native file processing capabilities to provide enterprise-grade security information and event management (SIEM) functionality. Unlike traditional SIEM platforms that rely on databases, indexing systems, and web interfaces, Terminal SIEM operates entirely through file-based processing using standard Linux commands and automated via cron and batch jobs.
+Terminal SIEM is a lightweight, command-line-based security monitoring solution that leverages Linux's native file processing capabilities to provide **enterprise-grade security information and event management (SIEM)** functionality. Unlike traditional SIEM platforms that rely on databases, indexing systems, and web interfaces, Terminal SIEM operates entirely through file-based processing using standard Linux commands and automated via cron and batch jobs.
 
 Terminal SIEM addresses three critical gaps in the security monitoring landscape:<br />
 - Organizations without SIEM capabilities - Provides immediate security monitoring without significant infrastructure investment<br />
