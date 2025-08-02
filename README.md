@@ -51,10 +51,15 @@ Skill set required | **Linux rsyslog, grep, awk, file management (*may need Gola
 7. Automation: Automate all these jobs using cron to run every minute, ensuring continuous monitoring and threat detection.
 8. Custom Maintenance Scripts: Develop custom maintenance scripts to perform additional tasks and schedule them to run using cron jobs, allowing for flexibility and extensibility in your setup.
 
-automation by `crontab`
+<br />
+<br />
+
+Automation by `crontab`
 
 ```bash
 */1 * * * * crawl_parse_detect_alert.sh 2>/dev/null
+0 */1 * * * job_hour.sh 2>/dev/null
+59 23 * * * job_daily.sh 2>/dev/null
 0 5 * * * housekeep.sh 2>/dev/null
 ```
 <br />
