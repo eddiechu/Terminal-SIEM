@@ -54,13 +54,13 @@ Skill set required | **Linux rsyslog, grep, awk, file management (*may need Gola
 <br />
 <br />
 
-Automation by `crontab`
+Automation by Linux `crontab`
 
 ```bash
 */1 * * * * crawl_parse_detect_alert.sh 2>/dev/null
-0 */1 * * * job_hour.sh 2>/dev/null
+0 */1 * * * job_hourly.sh 2>/dev/null
 59 23 * * * job_daily.sh 2>/dev/null
-0 5 * * * housekeep.sh 2>/dev/null
+1 0 * * * housekeep.sh 2>/dev/null
 ```
 <br />
 <br />
